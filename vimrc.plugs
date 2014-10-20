@@ -1,0 +1,33 @@
+" ~/.vimrc.plugs
+
+" set runtime path and call vim-plug
+call plug#begin('~/.vim/plugged')
+
+" programming language tools
+Plug 'sheerun/vim-polyglot'
+Plug 'LaTeX-Box-Team/LaTeX-Box'
+Plug 'scrooloose/syntastic'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'mattn/emmet-vim'
+"Plug 'SirVer/ultisnips'
+"Plug 'honza/vim-snippets'
+
+" colors
+Plug 'flazz/vim-colorschemes'
+Plug 'whatyouhide/vim-gotham'
+Plug 'reedes/vim-colors-pencil'
+
+" other plugins
+Plug 'bling/vim-airline'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'godlygeek/tabular'
+Plug 'junegunn/limelight.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'mattn/flappyvird-vim'
+Plug 'reedes/vim-wordy'
+Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+
+call plug#end()
