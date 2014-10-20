@@ -1,27 +1,31 @@
-# Lines configured by zsh-newuser-install
 HISTFILE=~/.zhistory
 HISTSIZE=4096
 SAVEHIST=4096
 setopt appendhistory autocd extendedglob
 unsetopt nomatch
-bindkey -v
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename $HOME/.zshrc
 
+# vi
+bindkey -v
+bindkey jj vi-cmd-mode
+bindkey "^A" beginning-of-line
+bindkey "^E" end-of-line
+
+# completion
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
+zstyle ':completion:*' menu select
 
-setopt autopushd pushdminus pushdsilent pushdtohome cdablevars
-
+# colors
 autoload -U colors
 colors
 
+# other goodies
+setopt autopushd pushdminus pushdsilent pushdtohome cdablevars
+
+# use color
 export CLICOLOR=1
 
-zstyle ':completion:*' menu select
-
+source $HOME/.zshenv # arch linux has problems
 source $HOME/.zsh_aliases
 source $HOME/.zsh_prompt
 source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
