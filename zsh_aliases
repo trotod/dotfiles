@@ -23,11 +23,12 @@ alias fgrep='fgrep --color=auto'
 alias b='bundle'
 alias be='bundle exec'
 
-# less
-#alias less='less -N'
-
 # source files
 alias so='source'
 
 # edit todo
 alias todo='$EDITOR ~/.todo'
+
+# shortcuts
+alias e='$EDITOR'
+alias v='vim'

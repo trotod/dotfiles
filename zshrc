@@ -20,13 +20,9 @@ colors
 
 export CLICOLOR=1
 
-autoload promptinit
-promptinit
-
-prompt walters
-
 zstyle ':completion:*' menu select
 
 source $HOME/.zsh_aliases
+source $HOME/.zsh_prompt
 source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
