@@ -1,0 +1,33 @@
+let mapleader = ","
+
+set complete=lt
+set hintchars=hjklasdf
+set noscrollbars
+set nofocuscontent
+
+:js << EOF
+function toggleBottom () {
+  var bb = document.getElementById('liberator-bottombar')
+  if (!bb) return
+  bb.style.height = (bb.style.height === '') ? '0px' : ''
+  bb.style.overflow = (bb.style.height === '') ? '' : 'hidden'
+}
+EOF
+
+map <silent> <C-F8> :js toggleBottom()<CR>
+map <Leader>/ :noh<CR>
+nnoremap J gt
+nnoremap K gT
+nnoremap <C-J> <C-S-n>
+nnoremap <C-K> <C-S-p>
+nnoremap d D
+nnoremap D d
+
+cnoremap <C-b> <Left>
+cnoremap <C-f> <Right>
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+cnoremap <M-b> <C-Left>
+cnoremap <M-f> <C-Right>
+
+colors pencil
