@@ -1,0 +1,39 @@
+# ~/.config/zathura/zathurarc
+
+set font                        "Tewi 11"
+set default-bg                  "#212121"
+set default-fg                  "#424242"
+
+set statusbar-fg                "#d9d9d9"
+set statusbar-bg                "#212121"
+
+set inputbar-bg                 "#212121"
+set inputbar-fg                 "#d9d9d9"
+
+set notification-error-bg       "#fb007a"
+set notification-error-fg       "#212121"
+
+set notification-warning-bg     "#f3e430"
+set notification-warning-fg     "#212121"
+
+set highlight-color             "#10a77a"
+set highlight-active-color      "#5fd7af"
+
+set completion-highlight-fg     "#424242"
+set completion-highlight-bg     "#20bbfc"
+
+set completion-bg               "#212121"
+set completion-fg               "#008ec4"
+
+set notification-bg             "#20a5ba"
+set notification-fg             "#212121"
+
+set recolor-lightcolor          "#212121"
+set recolor-darkcolor           "#d9d9d9"
+set recolor                     "true"
+
+# setting recolor-keep true will keep any color your pdf has.
+# if it is false, it'll just be black and white
+set recolor-keephue             "true"
+
+# Rest of your configs go here:
