@@ -1,6 +1,9 @@
 export EDITOR=vim
 export VISUAL=$EDITOR
 
+
+export PANEL_FIFO=/tmp/panel.fifo
+
 typeset -U path
 path=($(ruby -rubygems -e 'puts Gem.user_dir')/bin $HOME/bin $path)
 export GEM_HOME=$HOME/$(ruby -rubygems -e 'puts Gem.user_dir')
