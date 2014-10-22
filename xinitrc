@@ -13,6 +13,16 @@ hsetroot -fill ~/Pictures/wallpapers/deer.jpg
 unclutter -root &
 urxvtd &
 
+# no screensaver
+xset s noblank
+xset s off
+
+# ibus
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+ibus-daemon -drx
+
 if [ -d /etc/X11/xinit/xinitrc.d ]; then
   for f in /etc/X11/xinit/xinitrc.d/*; do
     [ -x "$f" ] && . "$f"
