@@ -3,6 +3,7 @@
 ! Variables ! {{{
 
 #define tewi -lucy-tewi-medium-r-normal--11-90-75-75-p-58-iso10646-1
+!#define unifont -gnu-unifont-medium-r-normal-sans-16-160-75-75-c-80-iso10646-1
 
 ! }}}
 
@@ -46,9 +47,8 @@ URxvt.boldFont: tewi
 URxvt.italicFont: tewi
 URxvt.boldItalicFont: tewi
 
-URxvt.colorBD: #20bbfc
-URxvt.colorIT: #5fd7af
-URxvt.colorUL: #6855de
+URxvt.colorBD: 12
+URxvt.colorUL: 10
 
 URxvt.cursorUnderline: true
 
