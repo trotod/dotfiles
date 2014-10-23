@@ -11,7 +11,7 @@ xset fp rehash
 xsetroot -cursor_name left_ptr
 hsetroot -fill ~/Pictures/wallpapers/deer.jpg
 unclutter -root &
-urxvtd &
+urxvtd -qof &
 
 # no screensaver
 xset s noblank
