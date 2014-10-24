@@ -3,119 +3,125 @@
 #
 
 # quit bspwm
-super + alt + Escape
-	pkill -x panel; bspc quit
+super + alt + {_,shift + }Escape
+  {bspc query -T > "$BSPWM_TREE"; \
+    bspc query -H > "$BSPWM_HISTORY"; \
+      pkill -x panel; bspc quit,\
+  pkill -x panel; bspc quit 1}
 
 # close window
 super + shift + x
-	bspc window -c
+  bspc window -c
 
 # kill window
 super + ctrl + shift + x
-	bspc window -k
+  bspc window -k
 
 # cycle between desktops
 super + t
-	bspc desktop -l next
+  bspc desktop -l next
 
 # balance windows
 super + b
-	bspc desktop -B
+  bspc desktop -B
 
 # equalize windows
 super + shift + b
-	bspc desktop -E
+  bspc desktop -E
 
 # toggle floating and fullscreen
 super + {s,f}
-	bspc window -t {floating,fullscreen}
+  bspc window -t {floating,fullscreen}
 
 # switch to last window or desktop
 super + {backslash,grave}
-	bspc {window,desktop} -f last
+  bspc {window,desktop} -f last
 
 # swap with last window
 super + apostrophe
-	bspc window -s last
+  bspc window -s last
 
 # record history
 super + {o,i}
-	bspc control --record-history off; \
-	bspc window {older,newer} -f; \
-	bspc control --record-history on
+  bspc control --record-history off; \
+  bspc window {older,newer} -f; \
+  bspc control --record-history on
 
 # move window to presel
 super + y
-	bspc window -w last.manual
+  bspc window -w last.manual
 
 # swap with biggest window
 super + m
-	bspc window -s biggest
+  bspc window -s biggest
 
 # focus or swap with window [in dir]
 super + {_,shift + }{h,j,k,l}
-	bspc window -{f,s} {left,down,up,right}
+  bspc window -{f,s} {left,down,up,right}
 
 # cycle through windows
 super + {_,shift + }Tab
-	bspc window -f {next,prev}
+  bspc window -f {next,prev}
 
 # rotate the windows of a desktop
 super + {comma,period}
-	bspc desktop -C {backward,forward}
+  bspc desktop -C {backward,forward}
 
 # cycle through the desktops
 super + bracket{left,right}
-	bspc desktop -f {prev,next}
+  bspc desktop -f {prev,next}
 
 # presel
 super + ctrl + {h,j,k,l}
-	bspc window -p {left,down,up,right}
+  bspc window -p {left,down,up,right}
 
 # cancel presel
 super + ctrl + {_,shift + }space
-	bspc {window -p cancel,desktop -c}
+  bspc {window -p cancel,desktop -c}
 
 # resize windows
 super + alt + {h,j,k,l}
-	bspc window -e {left -10,down +10,up -10,right +10}
+  bspc window -e {left -10,down +10,up -10,right +10}
 
 super + alt + shift + {h,j,k,l}
-	bspc window -e {right -10,up +10,down -10,left +10}
+  bspc window -e {right -10,up +10,down -10,left +10}
 
 # set splitting ratio, (0 is golden ratio ish)
 super + ctrl + {1-9,0}
-	bspc window -r 0.{1-9,618}
+  bspc window -r 0.{1-9,618}
 
 # follow or send window to desktop
 super + {_,shift + }{1-9,0}
-	bspc {desktop -f,window -d} ^{1-9,10}
+  bspc {desktop -f,window -d} ^{1-9,10}
 
 ~button1
-	bspc pointer -g focus
+  bspc pointer -g focus
 
 super + button{1-3}
-	bspc pointer -g {move,resize_side,resize_corner}
+  bspc pointer -g {move,resize_side,resize_corner}
 
 super + !button{1-3}
-	bspc pointer -t %i %i
+  bspc pointer -t %i %i
 
 super + @button{1-3}
-	bspc pointer -u
+  bspc pointer -u
 
 #
 # wm independent hotkeys
 #
 
 super + Return
-	urxvtc
+  urxvtc
 
 super + space
-	dmenu_run
+  dmenu_run
 
 super + w
-	firefox
+  firefox
+
+super + z
+  zathura
 
 # make sxhkd reload its configuration files:
 super + Escape
-	pkill -USR1 -x sxhkd
+  pkill -USR1 -x sxhkd

@@ -16,4 +16,9 @@ bspc rule -a Chromium desktop=^2
 #bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
+if [ -e "$BSPWM_TREE" ] ; then
+  bspc restore -T "$BSPWM_TREE" -H "$BSPWM_HISTORY" -S "$BSPWM_STACK"
+  rm "$BSPWM_TREE" "$BSPWM_HISTORY" "$BSPWM_STACK"
+fi
+
 $HOME/.config/bspwm/panel/panel &
