@@ -32,3 +32,6 @@ alias todo='$EDITOR ~/.todo'
 # shortcuts
 alias e='$EDITOR'
 alias v='vim'
+
+# ping
+alias ping='ping -c3'
