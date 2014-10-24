@@ -30,3 +30,4 @@ source $HOME/.zsh_aliases
 source $HOME/.zsh_prompt
 source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+[ -f /etc/profile.d/autojump.zsh ] && source /etc/profile.d/autojump.zsh
