@@ -25,6 +25,11 @@ setopt autopushd pushdminus pushdsilent pushdtohome cdablevars
 # use color
 export CLICOLOR=1
 
+# source functions
+for function in ~/.zsh/functions/*; do
+  source $function
+done
+
 source $HOME/.zshenv # arch linux has problems
 source $HOME/.zsh_aliases
 source $HOME/.zsh_prompt
