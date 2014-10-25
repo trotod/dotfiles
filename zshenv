@@ -1,12 +1,6 @@
 export EDITOR=vim
 export VISUAL=$EDITOR
 
-# bspwm
-export PANEL_FIFO=/tmp/panel.fifo
-export BSPWM_TREE=/tmp/bspwm.tree
-export BSPWM_HISTORY=/tmp/bspwm.history
-export BSPWM_STACK=/tmp/bspwm.stack
-
 typeset -U path
 path=($(ruby -rubygems -e 'puts Gem.user_dir')/bin $HOME/bin $path)
 export GEM_HOME=$(ruby -rubygems -e 'puts Gem.user_dir')
