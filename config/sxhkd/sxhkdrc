@@ -11,100 +11,100 @@ super + alt + {_,shift + }Escape
 
 # close window
 super + shift + x
-  bspc window -c
+  bspc window --close
 
 # kill window
 super + ctrl + shift + x
-  bspc window -k
+  bspc window --kill
 
 # cycle between desktops
 super + t
-  bspc desktop -l next
+  bspc desktop --layout next
 
 # balance windows
 super + b
-  bspc desktop -B
+  bspc desktop --balance
 
 # equalize windows
 super + shift + b
-  bspc desktop -E
+  bspc desktop --equalize
 
 # toggle floating and fullscreen
 super + {s,f}
-  bspc window -t {floating,fullscreen}
+  bspc window --toggle {floating,fullscreen}
 
 # switch to last window or desktop
 super + {backslash,grave}
-  bspc {window,desktop} -f last
+  bspc {window,desktop} --focus last
 
 # swap with last window
 super + apostrophe
-  bspc window -s last
+  bspc window --swap last
 
 # record history
 super + {o,i}
   bspc control --record-history off; \
-  bspc window {older,newer} -f; \
+  bspc window {older,newer} --focus; \
   bspc control --record-history on
 
 # move window to presel
 super + y
-  bspc window -w last.manual
+  bspc window --to-window last.manual
 
 # swap with biggest window
 super + m
-  bspc window -s biggest
+  bspc window --swap biggest
 
 # focus or swap with window [in dir]
 super + {_,shift + }{h,j,k,l}
-  bspc window -{f,s} {left,down,up,right}
+  bspc window --{focus,swap} {left,down,up,right}
 
 # cycle through windows
 super + {_,shift + }Tab
-  bspc window -f {next,prev}
+  bspc window --focus {next,prev}
 
 # rotate the windows of a desktop
 super + {comma,period}
-  bspc desktop -C {backward,forward}
+  bspc desktop --circulate {backward,forward}
 
 # cycle through the desktops
 super + bracket{left,right}
-  bspc desktop -f {prev,next}
+  bspc desktop --focus {prev,next}
 
 # presel
 super + ctrl + {h,j,k,l}
-  bspc window -p {left,down,up,right}
+  bspc window --presel {left,down,up,right}
 
 # cancel presel
 super + ctrl + {_,shift + }space
-  bspc {window -p cancel,desktop -c}
+  bspc {window --presel cancel,desktop --cancel-presel}
 
 # resize windows
 super + alt + {h,j,k,l}
-  bspc window -e {left -10,down +10,up -10,right +10}
+  bspc window --edge {left -10,down +10,up -10,right +10}
 
 super + alt + shift + {h,j,k,l}
-  bspc window -e {right -10,up +10,down -10,left +10}
+  bspc window --edge {right -10,up +10,down -10,left +10}
 
 # set splitting ratio, (0 is golden ratio ish)
 super + ctrl + {1-9,0}
-  bspc window -r 0.{1-9,618}
+  bspc window --ratio 0.{1-9,618}
 
 # follow or send window to desktop
 super + {_,shift + }{1-9,0}
-  bspc {desktop -f,window -d} ^{1-9,10}
+  bspc {desktop --focus,window --to-desktop} ^{1-9,10}
 
 ~button1
-  bspc pointer -g focus
+  bspc pointer --grab focus
 
 super + button{1-3}
-  bspc pointer -g {move,resize_side,resize_corner}
+  bspc pointer --grab {move,resize_side,resize_corner}
 
 super + !button{1-3}
-  bspc pointer -t %i %i
+  bspc pointer --track %i %i
 
 super + @button{1-3}
-  bspc pointer -u
+  bspc pointer --ungrab
 
 #
 # wm independent hotkeys
