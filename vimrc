@@ -102,6 +102,25 @@ endif
 set background=dark
 colors pencil
 
+" 'Tabs'
+
+" To open a new empty buffer
+" This replaces :tabnew which I used to bind to this mapping
+nmap <leader>T :enew<cr>
+
+" Move to the next buffer
+nmap <leader>L :bnext<CR>
+
+" Move to the previous buffer
+nmap <leader>H :bprevious<CR>
+
+" Close the current buffer and move to the previous one
+" This replicates the idea of closing a tab
+nmap <leader>bq :bp <BAR> bd #<CR>
+
+" Show all open buffers and their status
+nmap <leader>bl :ls<CR>
+
 " Plugin Options
 
 set grepprg=grep\ -nH\ $*
@@ -111,6 +130,9 @@ set laststatus=2
 let g:airline_powerline_fonts = 1
 set encoding=utf-8
 set noshowmode
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
 
 " easymotion
 map <Leader>l <Plug>(easymotion-lineforward)
