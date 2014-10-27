@@ -5,7 +5,7 @@
 # Executed by startx (run your window manager from here)
 
 xrdb ~/.Xresources
-xset +fp ~/.local/share/fonts
+xset +fp ~/.fonts
 xset fp rehash
 
 xsetroot -cursor_name left_ptr
