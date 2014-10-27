@@ -16,3 +16,8 @@ Programs
 + gtk themes and icons (created by others)
 + scripts collected from random places
 + and more...
+
+Screenshot
+----------
+
+![](https://raw.githubusercontent.com/trotod/dotfiles/master/screenshot.png)
