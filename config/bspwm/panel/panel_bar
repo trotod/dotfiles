@@ -71,7 +71,7 @@ while read -r line ; do
                 layout=""
                 ;;
             esac
-            wm_infos="$wm_infos  %{F$COLOR_LAYOUT_FG}%{B$COLOR_LAYOUT_BG} %{A:bspc desktop --layout next:}${layout}%{A} %{B-}%{F-}"
+            wm_infos="$wm_infos  %{F$COLOR_LAYOUT_FG}%{B$COLOR_LAYOUT_BG}%{A:bspc desktop --layout next:} ${layout} %{A}%{B-}%{F-}"
             ;;
         esac
         shift
