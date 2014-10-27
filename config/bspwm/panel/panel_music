@@ -1,0 +1,26 @@
+# panel_music
+
+source $(dirname $0)/panel_config
+
+panel_music()
+{
+
+  # suppose if mpd for some unfathomable reason was not running...
+  if [ $(pgrep -cx mpd) -eq 0 ] ; then
+    echo "Not playing."
+    exit 1
+  fi
+
+  status="$(mpc | sed -n 's/^.*\[\([^\[].*\)\] .*$/\1/p' | uniq)"
+  song="$(mpc current --format '%title%|%name%')"
+
+  prefix=""
+  if [[ $status == "paused" ]] ; then
+    prefix=""
+  fi
+
+  echo -n "%{A:mpc toggle:}$prefix $song%{A}"
+
+}
+
+# vim:set ft=sh:

@@ -2,6 +2,9 @@
 
 cd $(dirname $0)
 source $(dirname $0)/panel_config
+source $(dirname $0)/panel_battery
+source $(dirname $0)/panel_clock
+source $(dirname $0)/panel_music
 
 if [ $(pgrep -cx panel) -gt 1 ] ; then
   printf "%s\n" "The panel is already running." >&2
@@ -16,8 +19,16 @@ mkfifo "$PANEL_FIFO"
 bspc config top_padding $PANEL_HEIGHT
 bspc control --subscribe > "$PANEL_FIFO" &
 xtitle -sf 'T%s' > "$PANEL_FIFO" &
-clock -sf 'S⭧ %H:%M' > "$PANEL_FIFO" &
 
-cat "$PANEL_FIFO" | ./panel_bar | bar -g x$PANEL_HEIGHT -f "$FONT1","$FONT2" -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" &
+while true ; do
+  echo "S$(panel_music)  $(panel_battery)  $(panel_clock)" > "$PANEL_FIFO" &
+  sleep 1s
+done &
+
+cat "$PANEL_FIFO" | ./panel_bar | bar -g x$PANEL_HEIGHT -f "$FONT1","$FONT2" -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" | \
+  while read line; do
+    eval "$line";
+  done &
+
 
 wait

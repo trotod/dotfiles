@@ -1,0 +1,38 @@
+# battery
+
+# battery icons
+# 2b68 ⭨
+# 2b69 ⭩
+# 2b6a ⭪
+# 2b6b ⭫
+
+# e034-37
+# e038-3b
+
+source $(dirname $0)/panel_config
+
+panel_battery()
+{
+  batCapacity=/sys/class/power_supply/BAT0/capacity
+  batStatus=/sys/class/power_supply/BAT0/status
+
+  batCapacity=$(sed -n p $batCapacity)
+
+  icon=""
+  if [[ `cat $batStatus` != "Discharging" ]]; then
+    icon=""
+  elif [[ $batCapacity -lt 10 ]]; then
+    icon=""
+  elif [[ $batCapacity -lt 40 ]]; then
+    icon=""
+  elif [[ $batCapacity -lt 70 ]]; then
+    icon=""
+  else
+    icon=""
+  fi
+
+  echo -n "$icon $batCapacity%%"
+
+}
+
+# vim:set ft=sh:
