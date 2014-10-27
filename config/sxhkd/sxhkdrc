@@ -29,9 +29,9 @@ super + b
 super + shift + b
   bspc desktop --equalize
 
-# toggle floating and fullscreen
-super + {s,f}
-  bspc window --toggle {floating,fullscreen}
+# toggle pseudo_tiled, floating and fullscreen
+super + {p,s,f}
+  bspc window --toggle {pseudo_tiled,floating,fullscreen}
 
 # switch to last window or desktop
 super + {backslash,grave}
