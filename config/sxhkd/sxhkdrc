@@ -122,6 +122,16 @@ super + w
 super + z
   zathura
 
+# I run Arch Linux inside Virtualbox, and the function keys dont work, so...
+super + F6
+  mpc prev
+
+super + F7
+  mpc toggle
+
+super + F8
+  mpc next
+
 # screenshot
 Print
   scrot '%Y%m%d%H%M%S.png'
