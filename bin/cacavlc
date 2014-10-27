@@ -1,0 +1,2 @@
+#!/bin/sh
+CACA_DRIVER=ncurses vlc --vout caca "$@"

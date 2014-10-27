@@ -1,0 +1,111 @@
+#!/bin/bash
+
+# securepomf:
+# If run on a file, will encrypt the file and upload to pomf
+# If run on a special pomf URL, will download and decrypt
+
+
+
+
+
+# Make sure we have GPG and curl
+command -v curl >/dev/null 2>&1 || { echo >&2 "securepomf requires curl but it's not installed"; exit 1; }
+command -v gpg >/dev/null 2>&1 || { echo >&2 "securepomf requires gpg but it's not installed"; exit 1; }
+
+
+
+# Make sure we actually have something to work with
+if [ -z "$1" ]
+    then
+        echo "gib file or URL pls" && exit
+fi
+
+
+
+# These make the functions cleaner
+input_URI="$1"
+input_file="$(basename "$input_URI" | cut -d'#' -f1)"
+upload_url="http://pomf.se/upload.php"
+download_url="http://a.pomf.se"
+
+
+
+
+
+function encrypt_and_upload() {
+    # Derive a URL-friendly password from /dev/urandom
+    encryption_password="$(< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c32)"
+    # Derive a random filename so server doesn't know original
+    # Six lowercase letters make it look like a regular pomf file
+    encrypted_filename="$(< /dev/urandom tr -dc a-z | head -c6)"
+    
+    # Set our output
+    # Make sure extensionless files don't break
+    if [ "${input_file##*.}" == "$input_file" ]
+        then
+            extension=""
+        else
+            extension=".${input_file##*.}"
+    fi
+    encrypted_file="/tmp/$encrypted_filename$extension"
+    
+    # Encrypt the input with our generated pass
+    echo "Encrypting $input_file..."
+    echo "$encryption_password" | gpg --output "$encrypted_file" --batch --passphrase-fd 0 \
+        --symmetric --cipher-algo AES256 "$input_URI"
+    
+    # Try uploading the encrypted file... obviously
+    echo "Uploading encrypted file..."
+    curl_output=$(curl --silent -sf -F files[]="@$encrypted_file" "$upload_url")
+    n=0 # Try a few times
+    while [[ $n -le 3 ]]; do
+        printf "Upload attempt #${n}... "
+        if [[ "${curl_output}" =~ '"success":true,' ]]; then
+            pomf_file=$(echo "$curl_output" | grep -Eo '"url":"[A-Za-z0-9]+.*",' | sed 's/"url":"//;s/",//')
+            echo "Uploaded!"
+            break
+        else
+            echo "Failed..."
+            ((n = n +1))
+       fi
+    done
+    
+    # Append our pass with a delimiter to the URL
+    pomf_url="http://a.pomf.se/$pomf_file#$encryption_password"
+    
+    echo "File has been encrypted and uploaded to: $pomf_url"
+    
+    # Save the link
+    echo $pomf_url >> ~/secpomfs.txt
+    # Clean up
+    rm "$encrypted_file"
+}
+
+
+
+function download_and_decrypt() {
+    # All of this is pretty self-explanatory if you read the above
+
+    encrypted_file="$(mktemp)"
+    
+    echo "Downloading and decrypting $input_file..."
+    curl --silent "$input_URI" --output "$encrypted_file"
+
+    decryption_password="$(echo "$input_URI" | cut -d'#' -f2)"
+    
+    echo "$decryption_password" | gpg --output "$input_file" --batch --passphrase-fd 0 \
+        --decrypt "$encrypted_file" &>/dev/null
+        
+    rm "$encrypted_file"
+}
+
+
+
+# Detect whether we're getting a pomf URL to download
+# or a file, and respond accordingly
+if [[ "$input_URI" == "$download_url"* ]]
+    then
+        download_and_decrypt
+    else
+        encrypt_and_upload
+fi
