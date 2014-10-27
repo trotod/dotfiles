@@ -165,6 +165,13 @@ inoremap jj <Esc>
 inoremap jk <Esc>
 inoremap kj <Esc>
 
+" something that fixes something that bugged me forever
+nnoremap <Leader>d "_d
+nnoremap <Leader>D "_D
+nnoremap <Leader>C "_C
+nnoremap <Leader>c "_c
+nnoremap <Leader>x "_x
+
 " save stuff faster
 "nnoremap <Leader>w :w<CR>
 
