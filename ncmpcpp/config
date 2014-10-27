@@ -47,7 +47,7 @@ autocenter_mode = "yes"
 centered_cursor = "yes"
 
 # Bars
-#song_status_format = "$8%t $1• $2%a $1•{ $5%b $1• }$7%y$1"
+statusbar_visibility = "no"
 song_status_format = "$3{%t}|{%f}$9 $0by$9 $2%a$9{ $0from$9 $5%b$9}"
 progressbar_look = "─ ─"
 titles_visibility = "no"
