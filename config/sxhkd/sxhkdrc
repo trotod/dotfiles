@@ -116,6 +116,9 @@ super + Return
 super + space
   dmenu_run
 
+super + c
+  dmenu_calc
+
 super + w
   firefox
 
