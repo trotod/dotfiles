@@ -57,7 +57,7 @@ set fileformat=unix
 set fileformats=unix,dos
 
 " Whitespace
-set list listchars=tab:»·,trail:·
+set list listchars=tab:Â»Â·,trail:Â·
 
 " diffs
 set diffopt+=vertical " force vertical splits
