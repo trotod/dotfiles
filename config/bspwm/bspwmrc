@@ -1,5 +1,12 @@
 #! /bin/sh
 
+BLACK='#212121'
+BRIGHTBLACK='#424242'
+WHITE='#D9D9D9'
+BRIGHTWHITE='#F1F1F1'
+RED='#C30071'
+BRIGHTRED='#FB007A'
+
 bspc config border_width        2
 bspc config window_gap         12
 
@@ -8,13 +15,19 @@ bspc config borderless_monocle  true
 bspc config gapless_monocle     true
 bspc config focus_by_distance   true
 
+bspc config focused_border_color $BRIGHTBLACK
+bspc config active_border_color $BRIGHTBLACK
+bspc config normal_border_color $BLACK
+bspc config presel_border_color $WHITE
+bspc config focused_locked_border_color $BRIGHTRED
+bspc config active_locked_border_color $BRIGHTBLACK
+bspc config normal_locked_border_color $RED
+bspc config urgent_border_color $BRIGHTRED
+
 bspc monitor -d 1 2 3 4 5 6 7 8 9 0
 
 bspc rule -a Gimp desktop=^8 follow=on floating=on
 bspc rule -a Chromium desktop=^2
-#bspc rule -a mplayer2 floating=on
-#bspc rule -a Kupfer.py focus=on
-bspc rule -a Screenkey manage=off
 
 if [ -e "$BSPWM_TREE" ] ; then
   bspc restore -T "$BSPWM_TREE" -H "$BSPWM_HISTORY" -S "$BSPWM_STACK"
