@@ -28,6 +28,8 @@ bspc monitor -d 1 2 3 4 5 6 7 8 9 0
 
 bspc rule -a Gimp desktop=^8 follow=on floating=on
 bspc rule -a Chromium desktop=^2
+bspc rule -a Firefox desktop=^2
+bspc rule -a Places floating=on
 
 if [ -e "$BSPWM_TREE" ] ; then
   bspc restore -T "$BSPWM_TREE" -H "$BSPWM_HISTORY" -S "$BSPWM_STACK"
