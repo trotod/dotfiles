@@ -94,6 +94,10 @@ super + ctrl + {1-9,0}
 super + {_,shift + }{1-9,0}
   bspc {desktop --focus,window --to-desktop} ^{1-9,10}
 
+# like win+d on windows
+super + d
+  bspc control --toggle-visibility
+
 ~button1
   bspc pointer --grab focus
 
