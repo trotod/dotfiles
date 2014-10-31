@@ -190,6 +190,10 @@ nnoremap k gk
 nnoremap ' `
 nnoremap ` '
 
+" Move visual block
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
 " Goyo
 nnoremap <Leader>G :Goyo<CR>
 
