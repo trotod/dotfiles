@@ -1,14 +1,21 @@
-" vim:fdm=marker
+" ~/.vimrc
 
-set nocompatible  " Vi IMproved!
-filetype off      " will reenable
-let mapleader = ' ' " map leader
+" head {{{
 
+set nocompatible
+filetype off
+let mapleader = ' '
+
+" source plugins
 if filereadable(expand('~/.vimrc.plugs'))
   source ~/.vimrc.plugs
 endif
 
 filetype plugin indent on
+
+" }}}
+
+" general {{{
 
 set backspace=indent,eol,start " backspaces
 set history=50                 " keep 50 lines of command line history
@@ -29,11 +36,11 @@ set ignorecase
 set smartcase
 runtime! macros/matchit.vim " extended regexp matching
 
-" no backups
+" Backups and Writes
 set nobackup
 set nowritebackup
 set noswapfile
-set autowrite     " automatically display changes
+set autowrite
 
 " Tabs
 set autoindent
@@ -67,9 +74,12 @@ if has('mouse')
   set mouse=a
 endif
 
-" Files
+" }}}
+
+" autocmds {{{
 
 augroup vimrcEx
+
   autocmd!
 
   " text files have tw=72
@@ -77,7 +87,7 @@ augroup vimrcEx
 
   autocmd FileType make setlocal ts=8 sts=8 sw=8 noet
 
-  " markdown files
+  " markdown files wrap at 80 chars
   autocmd BufRead,BufNewFile *.md setlocal tw=80
 
   " When editing a file, always jump to the last known cursor position.
@@ -88,21 +98,80 @@ augroup vimrcEx
     \   exe "normal! g`\"" |
     \ endif
 
+  " use hypenation in autocompletion
+  autocmd Filetype css,scss,sass setlocal iskeyword+=-
+
 augroup END
 
-" GUI
+" }}}
+
+" gui {{{
 
 if has('gui_running')
   set guifont=Sauce\ Code\ Powerline
   set guioptions=
 endif
 
-" Colors
+" }}}
+
+" colors {{{
 
 set background=dark
 colors pencil
 
-" 'Tabs'
+" }}}
+
+" plugins {{{
+
+" airline {{{
+
+set laststatus=2
+let g:airline_powerline_fonts = 1
+set encoding=utf-8
+set noshowmode
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+" }}}
+
+" easymotion {{{
+
+map <Leader>l <Plug>(easymotion-lineforward)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>h <Plug>(easymotion-linebackward)
+let g:EasyMotion_startofline = 0
+
+" }}}
+
+" syntastic {{{
+
+" assuming bower and stuff, yeah...
+let g:syntastic_scss_sass_quiet_messages = { "regex": "File to import not found" }
+
+" }}}
+
+" latexbox {{{
+let g:LatexBox_latexmk_preview_continuously = 1
+let g:LatexBox_Folding = 1
+
+" }}}
+
+" limelight + goyo {{{
+
+autocmd User GoyoEnter Limelight
+autocmd User GoyoLeave Limelight!
+
+nnoremap <Leader>G :Goyo<CR>
+
+" }}}
+
+" }}}
+
+" Remaps and Commands {{{
+
+" 'Tabs' {{{
 
 " To open a new empty buffer
 " This replaces :tabnew which I used to bind to this mapping
@@ -121,59 +190,28 @@ nmap <leader>bq :bp <BAR> bd #<CR>
 " Show all open buffers and their status
 nmap <leader>bl :ls<CR>
 
-" Plugin Options
+" }}}
 
-set grepprg=grep\ -nH\ $*
-
-" airline
-set laststatus=2
-let g:airline_powerline_fonts = 1
-set encoding=utf-8
-set noshowmode
-
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#fnamemod = ':t'
-
-" easymotion
-map <Leader>l <Plug>(easymotion-lineforward)
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-map <Leader>h <Plug>(easymotion-linebackward)
-let g:EasyMotion_startofline = 0
-
-" syntastic
-" not sure why this shows up...
-"let g:syntastic_javascript_jshint_quiet_messages = { "level": "warnings",
-"                                                   \ "type": "syntax",
-"                                                   \ "regex": "ES5" }
-" assuming bower and stuff, yeah...
-let g:syntastic_scss_sass_quiet_messages = { "regex": "File to import not found" }
-
-" latexbox
-let g:LatexBox_latexmk_preview_continuously = 1
-let g:LatexBox_Folding=1
-
-" limelight + goyo
-
-autocmd User GoyoEnter Limelight
-autocmd User GoyoLeave Limelight!
-
-" Remaps and Commands
-
-" Bind a load of keys to <Esc> key
+" Bind a load of keys to <Esc> key {{{
 inoremap jj <Esc>
 inoremap jk <Esc>
 inoremap kj <Esc>
+" }}}
 
-" something that fixes something that bugged me forever
+" blackhole deletion {{{
 nnoremap <Leader>d "_d
 nnoremap <Leader>D "_D
 nnoremap <Leader>C "_C
 nnoremap <Leader>c "_c
 nnoremap <Leader>x "_x
+" }}}
 
-" save stuff faster
-"nnoremap <Leader>w :w<CR>
+" Move visual block {{{
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+" }}}
+
+" misc {{{
 
 " Don't use Ex mode, use Q for formatting
 map Q gw
@@ -190,15 +228,14 @@ nnoremap k gk
 nnoremap ' `
 nnoremap ` '
 
-" Move visual block
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
-
-" Goyo
-nnoremap <Leader>G :Goyo<CR>
-
 " clear searches
 nnoremap <leader>/ :noh<CR>
+
+" }}}
+
+" }}}
+
+" commands {{{
 
 " Convenient command to see the difference between
 " the current buffer and the file it was loaded from,
@@ -209,6 +246,12 @@ if !exists(":DiffOrig")
   \ | wincmd p | diffthis
 endif
 
+" }}}
+
+" misc {{{
 if &shell =~# 'fish$'
   set shell=sh
 endif
+" }}}
+
+" vim:fdm=marker
