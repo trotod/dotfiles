@@ -169,7 +169,7 @@ nnoremap <Leader>G :Goyo<CR>
 
 " }}}
 
-" Remaps and Commands {{{
+" Remaps {{{
 
 " 'Tabs' {{{
 
@@ -231,11 +231,18 @@ nnoremap ` '
 " clear searches
 nnoremap <leader>/ :noh<CR>
 
-" }}}
+" quit all with one hand
+nmap ZA :qa<CR>
 
 " }}}
 
-" commands {{{
+" }}}
+
+" Commands {{{
+
+" fuzzy writing
+command W w
+command Q q
 
 " Convenient command to see the difference between
 " the current buffer and the file it was loaded from,
