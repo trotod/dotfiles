@@ -1,0 +1,8 @@
+#!/bin/sh
+#
+# switch wallpapers
+# TODO use tilling too
+
+[ ! -d $HOME/Pictures/wallpapers ] && exit 1
+cd $HOME/Pictures/wallpapers
+hsetroot -fill $(ls | dmenu -i -l 20)
