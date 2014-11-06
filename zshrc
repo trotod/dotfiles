@@ -36,3 +36,8 @@ source $HOME/.zsh_prompt
 source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 [ -f /etc/profile.d/autojump.zsh ] && source /etc/profile.d/autojump.zsh
+
+# keychain
+if which keychain &>/dev/null ; then
+  eval $(keychain --eval --quick --quiet --nogui id_rsa)
+fi
