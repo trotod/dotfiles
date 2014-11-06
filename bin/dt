@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# Name: dt
+# Usage: dt SOCKET [PROGRAM]
+# Description: Creates or attaches dtach sessions
+
+PROGRAM="zsh"
+SOCKETDIR="/tmp/dtach-$(id -u)"
+
+if [ "$1" = "-h" ] || [ "$1" = "--help" ] || [ "$1" = "" ] ; then
+  echo -e "Usage: dt SOCKET [PROGRAM]\n"
+  exit 0
+fi
+
+[ ! -d "$SOCKETDIR" ] && mkdir -p "$SOCKETDIR"
+
+[ "$2" != "" ] && PROGRAM="$2"
+
+
+dtach -A "$SOCKETDIR/$1" -e "^|" -r winch "$PROGRAM"
