@@ -9,7 +9,7 @@ xset +fp ~/.fonts
 xset fp rehash
 
 xsetroot -cursor_name left_ptr
-hsetroot -fill ~/Pictures/wallpapers/deer.jpg
+hsetroot -solid \#212121
 unclutter -root &
 urxvtd -q -f -o
 
