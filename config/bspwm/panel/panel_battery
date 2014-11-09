@@ -18,11 +18,13 @@ panel_battery()
 
   batCapacity=$(sed -n p $batCapacity)
 
+  foreground="$WHITE"
   icon=""
   if [[ `cat $batStatus` != "Discharging" ]]; then
     icon=""
   elif [[ $batCapacity -lt 10 ]]; then
     icon=""
+    foreground="$BRIGHTRED"
   elif [[ $batCapacity -lt 40 ]]; then
     icon=""
   elif [[ $batCapacity -lt 70 ]]; then
@@ -31,7 +33,7 @@ panel_battery()
     icon=""
   fi
 
-  echo -n "$icon $batCapacity%%"
+  echo -n "%{F$foreground}$icon $batCapacity%%%{F-}"
 
 }
 
