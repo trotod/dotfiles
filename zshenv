@@ -1,5 +1,6 @@
 export EDITOR=vim
 export VISUAL=$EDITOR
+export GPG_TTY=$(tty)
 
 typeset -U path
 path=($(ruby -rubygems -e 'puts Gem.user_dir')/bin $HOME/.bin $path)
