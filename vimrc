@@ -246,8 +246,14 @@ nmap ZA :qa<CR>
 " Commands {{{
 
 " fuzzy writing
-command W w
-command Q q
+if !exists(":W")
+  command W w
+endif
+
+" fuzzy quitting
+if !exists(":Q")
+  command Q q
+endif
 
 " Convenient command to see the difference between
 " the current buffer and the file it was loaded from,
