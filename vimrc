@@ -6,6 +6,11 @@ set nocompatible
 filetype off
 let mapleader = ' '
 
+" windows rtp
+if has('win32')
+  set rtp+=$HOME/.vim
+endif
+
 " source plugins
 if filereadable(expand('~/.vimrc.plugs'))
   source ~/.vimrc.plugs
