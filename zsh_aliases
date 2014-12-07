@@ -35,3 +35,4 @@ alias v='vim'
 
 # ping
 alias ping='ping -c3'
+alias addon-sdk="cd /opt/addon-sdk && source bin/activate; cd -"
