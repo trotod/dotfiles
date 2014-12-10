@@ -1,0 +1,16 @@
+# ~/.chktexrc
+# mostly just exception rules
+
+Silent
+{
+
+  # indents
+  \indent
+
+  # ifpdf
+  \ifpdf
+
+  # mla
+  \bibent
+
+}
