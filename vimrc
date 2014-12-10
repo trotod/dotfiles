@@ -216,6 +216,10 @@ vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 " }}}
 
+" ctags {{{
+map <Leader>ct :!ctags -R .<CR>
+" }}}
+
 " misc {{{
 
 " Don't use Ex mode, use Q for formatting

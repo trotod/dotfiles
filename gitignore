@@ -56,3 +56,8 @@ Thumbs.db
 Session.vim
 .netrwhist
 *~
+
+# Tags #
+########
+tags
+!tags/
