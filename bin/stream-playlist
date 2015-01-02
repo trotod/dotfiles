@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+# stream-playlist
+# Author:      David Liu <dl_@keybase.io>
+# Description: Uses youtube-dl to fetch playlists and load into mpd
+# Requires:    youtube-dl, mpc, mpd
+# Usage:       stream-playlist <playlist-url>
+
+
+# TODO Support EXTM4U
+
+MPD_PLAYLIST_DIR="$HOME/.mpd/playlists/"
+TIMESTAMP="$(date +%s)"
+EXT=".m3u"
+
+youtube-dl --get-url --extract-audio "$1" | tee "${MPD_PLAYLIST_DIR}/$TIMESTAMP$EXT"
+mpc load "$TIMESTAMP"
+rm "${MPD_PLAYLIST_DIR}/${TIMESTAMP}${EXT}"
