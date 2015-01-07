@@ -23,6 +23,10 @@ nnoremap <C-K> <C-S-p>
 nnoremap d D
 nnoremap D d
 
+" scroll faster
+nnoremap j 5j
+nnoremap k 5k
+
 cnoremap <C-b> <Left>
 cnoremap <C-f> <Right>
 cnoremap <C-p> <Up>
