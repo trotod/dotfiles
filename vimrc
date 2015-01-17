@@ -11,16 +11,47 @@ if has('win32')
   set rtp+=$HOME/.vim
 endif
 
-" source plugins
-if filereadable(expand('~/.vimrc.plugs'))
-  source ~/.vimrc.plugs
-endif
+" }}}
 
-filetype plugin indent on
+" plugins {{{
+
+" set runtime path and call vim-plug
+call plug#begin('~/.vim/plugged')
+
+" programming language tools
+Plug 'sheerun/vim-polyglot'
+Plug 'LaTeX-Box-Team/LaTeX-Box'
+Plug 'scrooloose/syntastic'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'mattn/emmet-vim'
+"Plug 'SirVer/ultisnips'
+"Plug 'honza/vim-snippets'
+
+" colors
+Plug 'flazz/vim-colorschemes'
+Plug 'whatyouhide/vim-gotham'
+Plug 'reedes/vim-colors-pencil'
+
+" other plugins
+Plug 'bling/vim-airline'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'godlygeek/tabular'
+Plug 'junegunn/limelight.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'mattn/flappyvird-vim'
+Plug 'reedes/vim-wordy'
+Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+
+call plug#end()
 
 " }}}
 
 " general {{{
+
+filetype plugin indent on
 
 set backspace=indent,eol,start " backspaces
 set history=50                 " keep 50 lines of command line history
@@ -131,9 +162,11 @@ colors pencil
 " airline {{{
 
 set laststatus=2
-let g:airline_powerline_fonts = 1
 set encoding=utf-8
 set noshowmode
+
+let g:airline_left_sep=''
+let g:airline_right_sep=''
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
