@@ -39,5 +39,5 @@ source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # keychain
 if which keychain &>/dev/null ; then
-  eval $(keychain --eval --quick --quiet --nogui id_rsa)
+  eval $(keychain --eval --quick --quiet --nogui --agents ssh id_rsa)
 fi
