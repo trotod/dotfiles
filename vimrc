@@ -44,6 +44,7 @@ Plug 'reedes/vim-wordy'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
+Plug 'itchyny/thumbnail.vim'
 
 call plug#end()
 
