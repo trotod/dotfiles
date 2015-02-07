@@ -35,7 +35,7 @@ source $HOME/.zsh_aliases
 source $HOME/.zsh_prompt
 source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-[ -f /etc/profile.d/autojump.zsh ] && source /etc/profile.d/autojump.zsh
+[ -f $HOME/.bin/z.sh ] && . $HOME/.bin/z.sh
 
 # keychain
 if which keychain &>/dev/null ; then
