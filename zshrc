@@ -11,6 +11,8 @@ bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line
 
 # completion
+typeset -U fpath
+fpath=($HOME/.zsh/completion $fpath)
 autoload -Uz compinit
 compinit
 zstyle ':completion:*' menu select

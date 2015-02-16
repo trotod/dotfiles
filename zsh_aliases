@@ -36,3 +36,10 @@ alias v='vim'
 # ping
 alias ping='ping -c3'
 alias addon-sdk="cd /opt/addon-sdk && source bin/activate; cd -"
+
+# git
+alias ga='git add'
+alias gc='git commit'
+alias gca='git commit -a'
+alias gcm='git commit -m'
+alias gcam='git commit -am'
