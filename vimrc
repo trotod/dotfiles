@@ -277,6 +277,9 @@ nnoremap <leader>/ :noh<CR>
 " quit all with one hand
 nmap ZA :qa<CR>
 
+" map <CR> to :
+nnoremap <CR> :
+
 " }}}
 
 " }}}
