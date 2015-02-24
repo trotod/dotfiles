@@ -86,6 +86,13 @@ super + alt + {h,j,k,l}
 super + alt + shift + {h,j,k,l}
   bspc window --edge {right -10,up +10,down -10,left +10}
 
+# floating mode
+super + alt + m : {h,j,k,l}
+  xdo move {-x -10,-y +10,-y -10,-x +10}
+
+super + shift + m : {h,j,k,l}
+  xdo resize {-w -10,-h -10,-h +10,-w +10}
+
 # set splitting ratio, (0 is golden ratio ish)
 super + ctrl + {1-9,0}
   bspc window --ratio 0.{1-9,618}
@@ -138,6 +145,9 @@ super + F7
 
 super + F8
   mpc next
+
+super + ctrl + x
+  pkill -f x11grab
 
 # screenshot
 Print
