@@ -12,6 +12,7 @@ xsetroot -cursor_name left_ptr
 hsetroot -solid \#212121
 unclutter -root &
 urxvtd -q -f -o
+dunst &
 
 # no screensaver
 xset s noblank
