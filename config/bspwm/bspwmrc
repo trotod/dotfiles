@@ -40,6 +40,7 @@ bspc rule -a Gimp desktop=^8 follow=on floating=on
 bspc rule -a Chromium desktop=^2
 bspc rule -a Firefox desktop=^2
 bspc rule -a Places floating=on
+bspc rule -a feh floating=on border=off
 
 if [ -e "$BSPWM_TREE" ] ; then
   bspc restore -T "$BSPWM_TREE" -H "$BSPWM_HISTORY" -S "$BSPWM_STACK"
