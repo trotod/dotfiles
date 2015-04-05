@@ -25,7 +25,7 @@ while true ; do
   sleep 1s
 done &
 
-cat "$PANEL_FIFO" | ./panel_bar | bar -g x$PANEL_HEIGHT -f "$FONT1","$FONT2" -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" | \
+cat "$PANEL_FIFO" | ./panel_bar | lemonbar -g x$PANEL_HEIGHT -f "$FONT1","$FONT2" -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" | \
   while read line; do
     eval "$line";
   done &
