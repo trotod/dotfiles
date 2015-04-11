@@ -156,6 +156,9 @@ Print
 alt + Print
   scrot --focused '%Y%m%d%H%M%S.png'
 
+ctrl + q
+  echo "WARNING: YOU ARE PRESSING CTRL-Q" | dmenu
+
 
 # make sxhkd reload its configuration files:
 super + Escape
