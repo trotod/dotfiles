@@ -45,6 +45,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'itchyny/thumbnail.vim'
+Plug 'shime/vim-livedown'
 
 call plug#end()
 
