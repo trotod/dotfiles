@@ -43,3 +43,6 @@ alias gc='git commit'
 alias gca='git commit -a'
 alias gcm='git commit -m'
 alias gcam='git commit -am'
+
+# clear
+alias c='clear'
