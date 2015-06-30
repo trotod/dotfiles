@@ -1,22 +1,16 @@
 {
-  "node": true,
-  "browser": true,
-  "esnext": true,
+  "asi": true,
   "bitwise": false,
   "curly": false,
+  "esnext": true,
   "eqeqeq": true,
   "eqnull": true,
-  "immed": true,
   "latedef": "nofunc",
-  "newcap": true,
   "noarg": true,
-  "quotmark": "single",
   "undef": true,
   "strict": false,
-  "trailing": true,
-  "smarttabs": true,
-  "indent": 2,
-  "asi": true,
-  "laxcomma": true,
-  "laxbreak": true
+
+  "browser": true,
+  "browserify": true,
+  "node": true
 }
