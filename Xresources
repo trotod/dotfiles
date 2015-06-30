@@ -50,7 +50,7 @@ URxvt.boldItalicFont: tewi
 URxvt.colorBD: 12
 URxvt.colorUL: 10
 
-URxvt.cursorUnderline: true
+URxvt.cursorUnderline: false
 
 ! }}}
 
