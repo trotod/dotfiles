@@ -157,7 +157,7 @@ alt + Print
   scrot --focused '%Y%m%d%H%M%S.png'
 
 ctrl + q
-  echo "WARNING: YOU ARE PRESSING CTRL-Q" | dmenu
+  notify-send --urgency critical "You are pressing ^q" "Don't do that."
 
 
 # make sxhkd reload its configuration files:
