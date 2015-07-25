@@ -156,8 +156,8 @@ Print
 alt + Print
   scrot --focused '%Y%m%d%H%M%S.png'
 
-ctrl + q
-  notify-send --urgency critical "You are pressing ^q" "Don't do that."
+#ctrl + q
+#  notify-send --urgency critical "You are pressing ^q" "Don't do that."
 
 
 # make sxhkd reload its configuration files:
