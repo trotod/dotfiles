@@ -190,6 +190,9 @@ let g:EasyMotion_startofline = 0
 " assuming bower and stuff, yeah...
 let g:syntastic_scss_sass_quiet_messages = { "regex": "File to import not found" }
 
+" standard javascript actually looks pretty!
+let g:syntastic_javascript_checkers = ['standard']
+
 " }}}
 
 " latexbox {{{
