@@ -24,6 +24,7 @@ Plug 'LaTeX-Box-Team/LaTeX-Box'
 Plug 'scrooloose/syntastic'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim'
+Plug 'othree/yajs.vim'
 "Plug 'SirVer/ultisnips'
 "Plug 'honza/vim-snippets'
 
@@ -207,6 +208,12 @@ autocmd User GoyoEnter Limelight
 autocmd User GoyoLeave Limelight!
 
 nnoremap <Leader>G :Goyo<CR>
+
+" }}}
+
+" syntax {{{
+
+let g:polyglot_disabled = ['javascript']
 
 " }}}
 
