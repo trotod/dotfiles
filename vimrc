@@ -25,6 +25,8 @@ Plug 'scrooloose/syntastic'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim'
 Plug 'othree/yajs.vim'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
 "Plug 'SirVer/ultisnips'
 "Plug 'honza/vim-snippets'
 
@@ -85,8 +87,8 @@ set autowrite
 set autoindent
 set smartindent
 set smarttab
-set shiftwidth=2
-set softtabstop=2
+"set shiftwidth=2
+"set softtabstop=2
 set expandtab
 
 " Scrolling
@@ -121,13 +123,7 @@ augroup vimrcEx
 
   autocmd!
 
-  " text files have tw=72
-  autocmd FileType text setlocal textwidth=72
-
   autocmd FileType make setlocal ts=8 sts=8 sw=8 noet
-
-  " markdown files wrap at 80 chars
-  autocmd BufRead,BufNewFile *.md setlocal tw=80
 
   " When editing a file, always jump to the last known cursor position.
   " Except commits, when the position is invalid or when
@@ -138,7 +134,7 @@ augroup vimrcEx
     \ endif
 
   " use hypenation in autocompletion
-  autocmd Filetype css,scss,sass setlocal iskeyword+=-
+  autocmd Filetype css,scss,sass,less,stylus setlocal iskeyword+=-
 
 augroup END
 
@@ -213,7 +209,7 @@ nnoremap <Leader>G :Goyo<CR>
 
 " syntax {{{
 
-let g:polyglot_disabled = ['javascript']
+let g:polyglot_disabled = ['javascript', 'markdown']
 
 " }}}
 
