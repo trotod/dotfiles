@@ -200,8 +200,8 @@ let g:LatexBox_Folding = 1
 
 " limelight + goyo {{{
 
-autocmd User GoyoEnter Limelight
-autocmd User GoyoLeave Limelight!
+" autocmd User GoyoEnter Limelight
+" autocmd User GoyoLeave Limelight!
 
 nnoremap <Leader>G :Goyo<CR>
 
