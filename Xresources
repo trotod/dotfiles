@@ -1,12 +1,5 @@
 ! ~/.Xresources
 
-! Variables ! {{{
-
-#define tewi -lucy-tewi-medium-r-normal--11-90-75-75-p-58-iso10646-1
-!#define unifont -gnu-unifont-medium-r-normal-sans-16-160-75-75-c-80-iso10646-1
-
-! }}}
-
 ! Colors ! {{{
 
 *background: #212121
@@ -39,18 +32,20 @@
 
 ! }}}
 
-! URxvt options ! {{{
+! Terminal options ! {{{
 
-URxvt.scrollBar: false
-URxvt.font: tewi
-URxvt.boldFont: tewi
-URxvt.italicFont: tewi
-URxvt.boldItalicFont: tewi
+*.scrollBar: false
 
-URxvt.colorBD: 12
-URxvt.colorUL: 10
+*.font: xft:Source Code Pro:size=10,xft:DejaVu Sans:size=10
+*.boldFont: xft:Source Code Pro:size=10:style=Bold,xft:DejaVu Sans:size=10
+*.italicFont: xft:Source Code Pro:size=10:style=Italic,xft:DejaVu Sans:size=10
+*.boldItalicFont: xft:Source Code Pro:size=10:style=BoldItalic,xft:DejaVu Sans:size=10
+*.letterSpace: -1
 
-URxvt.cursorUnderline: false
+*.colorBD: 12
+*.colorUL: 10
+
+*.cursorUnderline: false
 
 ! }}}
 
