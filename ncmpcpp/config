@@ -36,7 +36,7 @@ visualizer_type = "spectrum" (spectrum/wave)
 visualizer_in_stereo = "no"
 #visualizer_look = "▒░"
 visualizer_look = "▒▊"
-visualizer_sync_interval = "5"
+#visualizer_sync_interval = "5"
 
 # Playlist
 song_columns_list_format = "(6f)[cyan]{l} (40)[green]{t|f} (25)[red]{a} (30)[blue]{b}"
