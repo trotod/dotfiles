@@ -27,6 +27,7 @@ Plug 'mattn/emmet-vim'
 Plug 'othree/yajs.vim'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'raichoo/purescript-vim'
 "Plug 'SirVer/ultisnips'
 "Plug 'honza/vim-snippets'
 
@@ -44,11 +45,13 @@ Plug 'junegunn/goyo.vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'mattn/flappyvird-vim'
 Plug 'reedes/vim-wordy'
-Plug 'tpope/vim-vinegar'
+" Plug 'tpope/vim-vinegar'
+Plug 'jeetsukumaran/vim-filebeagle'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'itchyny/thumbnail.vim'
-Plug 'shime/vim-livedown'
+Plug 'junegunn/vim-journal'
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
@@ -115,6 +118,9 @@ if has('mouse')
   set mouse=a
 endif
 
+" Updatetime
+set updatetime=500
+
 " }}}
 
 " autocmds {{{
@@ -161,7 +167,7 @@ colors pencil
 " airline {{{
 
 set laststatus=2
-set encoding=utf-8
+" set encoding=utf-8
 set noshowmode
 
 let g:airline_left_sep=''
@@ -210,6 +216,15 @@ nnoremap <Leader>G :Goyo<CR>
 " syntax {{{
 
 let g:polyglot_disabled = ['javascript', 'markdown']
+
+" }}}
+
+" GitGutter {{{
+
+highlight link GitGutterAdd DiffAdd
+highlight link GitGutterChange DiffChange
+highlight link GitGutterDelete DiffDelete
+highlight link GitGutterChangeDelete GitGutterChange
 
 " }}}
 
