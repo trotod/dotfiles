@@ -3,7 +3,7 @@
 ! Colors ! {{{
 
 *background: #212121
-*foreground: #d9d9d9
+*foreground: #f1f1f1
 *cursorColor: #20bbfc
 ! Black
 *color0: #212121
@@ -36,10 +36,10 @@
 
 *.scrollBar: false
 
-*.font: xft:Source Code Pro:size=10,xft:DejaVu Sans:size=10
-*.boldFont: xft:Source Code Pro:size=10:style=Bold,xft:DejaVu Sans:size=10
-*.italicFont: xft:Source Code Pro:size=10:style=Italic,xft:DejaVu Sans:size=10
-*.boldItalicFont: xft:Source Code Pro:size=10:style=BoldItalic,xft:DejaVu Sans:size=10
+*.font: xft:Source Code Pro:size=9,xft:DejaVu Sans:size=9
+*.boldFont: xft:Source Code Pro:size=9:style=Bold,xft:DejaVu Sans:size=9
+*.italicFont: xft:Source Code Pro:size=9:style=Italic,xft:DejaVu Sans:size=9
+*.boldItalicFont: xft:Source Code Pro:size=9:style=BoldItalic,xft:DejaVu Sans:size=9
 *.letterSpace: -1
 
 *.colorBD: 12
