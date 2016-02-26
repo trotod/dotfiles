@@ -40,7 +40,7 @@
 *.boldFont: xft:Source Code Pro:size=9:style=Bold,xft:DejaVu Sans:size=9
 *.italicFont: xft:Source Code Pro:size=9:style=Italic,xft:DejaVu Sans:size=9
 *.boldItalicFont: xft:Source Code Pro:size=9:style=BoldItalic,xft:DejaVu Sans:size=9
-*.letterSpace: -1
+*.letterSpace: -2
 
 *.colorBD: 12
 *.colorUL: 10
