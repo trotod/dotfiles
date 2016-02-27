@@ -40,6 +40,18 @@ fi
 
 [ -f $HOME/.bin/z.sh ] && . $HOME/.bin/z.sh
 
+# $PATH
+typeset -U path
+path=($(ruby -rubygems -e 'puts Gem.user_dir')/bin $HOME/.local/bin $HOME/.bin $path)
+export GEM_HOME=$(ruby -rubygems -e 'puts Gem.user_dir')
+
+[ -d /usr/local/texlive/2014/bin/x86_64-linux ] && path=($path /usr/local/texlive/2014/bin/x86_64-linux)
+[ -d $HOME/.rbenv/bin ] && path=($HOME/.rbenv/bin $path)
+
+if which rbenv &>/dev/null ; then
+  eval "$(rbenv init -)"
+fi
+
 # keychain
 if which keychain &>/dev/null ; then
   eval $(keychain --eval --quick --quiet --nogui --agents ssh id_rsa)
