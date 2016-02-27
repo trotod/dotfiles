@@ -18,40 +18,42 @@ endif
 " set runtime path and call vim-plug
 call plug#begin('~/.vim/plugged')
 
-" programming language tools
+" syntax highlighting
 Plug 'sheerun/vim-polyglot'
+Plug 'othree/yajs.vim'
 Plug 'LaTeX-Box-Team/LaTeX-Box'
+Plug 'junegunn/vim-journal'
+
+" lints
 Plug 'scrooloose/syntastic'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'mattn/emmet-vim'
-Plug 'othree/yajs.vim'
+
+" pandoc
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
-Plug 'raichoo/purescript-vim'
-"Plug 'SirVer/ultisnips'
-"Plug 'honza/vim-snippets'
 
 " colors
-Plug 'flazz/vim-colorschemes'
-Plug 'whatyouhide/vim-gotham'
 Plug 'reedes/vim-colors-pencil'
 
-" other plugins
+" interface
 Plug 'bling/vim-airline'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'godlygeek/tabular'
+Plug 'jeetsukumaran/vim-filebeagle'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
-Plug 'Lokaltog/vim-easymotion'
-Plug 'mattn/flappyvird-vim'
-Plug 'reedes/vim-wordy'
-" Plug 'tpope/vim-vinegar'
-Plug 'jeetsukumaran/vim-filebeagle'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-fugitive'
 Plug 'itchyny/thumbnail.vim'
-Plug 'junegunn/vim-journal'
+
+" shortcuts
+Plug 'tpope/vim-surround'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'godlygeek/tabular'
+
+" interop
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+
+" other plugins
+Plug 'mattn/flappyvird-vim'
 
 call plug#end()
 
@@ -61,24 +63,24 @@ call plug#end()
 
 filetype plugin indent on
 
-set backspace=indent,eol,start " backspaces
-set history=50                 " keep 50 lines of command line history
-set ruler                      " show the cursor position all the time
-set showcmd                    " display incomplete commands
-set incsearch                  " do incremental searching
-set hidden                     " buffers can exist in background
-set number                     " line numbers
-set relativenumber             " make relative
+set backspace=indent,eol,start
+set history=50
+set ruler
+set showcmd
+set incsearch
+set hidden
+set number
+set relativenumber
 
 " highlighting
 syntax on
-set hlsearch  " highlight searches
-set incsearch " as typed
+set hlsearch
+set incsearch
 
 " search
 set ignorecase
 set smartcase
-runtime! macros/matchit.vim " extended regexp matching
+runtime! macros/matchit.vim
 
 " Backups and Writes
 set nobackup
@@ -90,8 +92,6 @@ set autowrite
 set autoindent
 set smartindent
 set smarttab
-"set shiftwidth=2
-"set softtabstop=2
 set expandtab
 
 " Scrolling
@@ -129,8 +129,6 @@ augroup vimrcEx
 
   autocmd!
 
-  autocmd FileType make setlocal ts=8 sts=8 sw=8 noet
-
   " When editing a file, always jump to the last known cursor position.
   " Except commits, when the position is invalid or when
   " inside an event handler (happens when dropping a file on gvim).
@@ -149,7 +147,7 @@ augroup END
 " gui {{{
 
 if has('gui_running')
-  set guifont=Sauce\ Code\ Powerline
+  set guifont=Fira\ Mono
   set guioptions=
 endif
 
@@ -164,69 +162,39 @@ colors pencil
 
 " plugins {{{
 
-" airline {{{
-
+" airline
 set laststatus=2
-" set encoding=utf-8
 set noshowmode
-
 let g:airline_left_sep=''
 let g:airline_right_sep=''
-
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 
-" }}}
-
-" easymotion {{{
-
+" easymotion
 map <Leader>l <Plug>(easymotion-lineforward)
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 map <Leader>h <Plug>(easymotion-linebackward)
 let g:EasyMotion_startofline = 0
 
-" }}}
-
-" syntastic {{{
-
-" assuming bower and stuff, yeah...
-let g:syntastic_scss_sass_quiet_messages = { "regex": "File to import not found" }
-
-" standard javascript actually looks pretty!
+" standardjs
 let g:syntastic_javascript_checkers = ['standard']
 
-" }}}
-
-" latexbox {{{
+" latexbox
 let g:LatexBox_latexmk_preview_continuously = 1
 let g:LatexBox_Folding = 1
 
-" }}}
-
-" limelight + goyo {{{
-
-" autocmd User GoyoEnter Limelight
-" autocmd User GoyoLeave Limelight!
-
+" goyo
 nnoremap <Leader>G :Goyo<CR>
 
-" }}}
-
-" syntax {{{
-
+" syntax
 let g:polyglot_disabled = ['javascript', 'markdown']
 
-" }}}
-
-" GitGutter {{{
-
+" GitGutter
 highlight link GitGutterAdd DiffAdd
 highlight link GitGutterChange DiffChange
 highlight link GitGutterDelete DiffDelete
 highlight link GitGutterChangeDelete GitGutterChange
-
-" }}}
 
 " }}}
 
