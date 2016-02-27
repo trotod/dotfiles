@@ -32,10 +32,11 @@ for function in ~/.zsh/functions/*; do
   source $function
 done
 
-source $HOME/.zshenv # arch linux has problems
-source $HOME/.zsh_aliases
+source $HOME/.aliases
 source $HOME/.zsh_prompt
-source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+  source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
 
 [ -f $HOME/.bin/z.sh ] && . $HOME/.bin/z.sh
 

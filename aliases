@@ -1,5 +1,5 @@
 # directory listings
-alias ls='ls -hF --color=auto'
+alias ls='ls -hF --color=auto --group-directories-first'
 alias la='ls -A'
 alias ll='ls -l'
 alias l='ls -CF'
