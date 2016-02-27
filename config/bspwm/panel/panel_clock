@@ -4,7 +4,7 @@ source $(dirname $0)/panel_config
 
 panel_clock()
 {
-  echo $(clock -f '⭧ %H:%M')
+  echo $(clock -f ' %H:%M')
 }
 
 # vim:set ft=sh:
