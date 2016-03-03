@@ -89,6 +89,7 @@ set noswapfile
 set autowrite
 
 " Tabs
+set tabstop=2
 set autoindent
 set smartindent
 set smarttab
@@ -108,7 +109,7 @@ set fileformat=unix
 set fileformats=unix,dos
 
 " Whitespace
-set list listchars=tab:»·,trail:·
+set list listchars=tab:\ \ ,trail:·
 
 " diffs
 set diffopt+=vertical " force vertical splits
