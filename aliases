@@ -46,3 +46,6 @@ alias gcam='git commit -am'
 
 # clear
 alias c='clear'
+
+# vifm
+alias f='vifm .'
