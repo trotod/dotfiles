@@ -22,6 +22,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'sheerun/vim-polyglot'
 Plug 'othree/yajs.vim'
 Plug 'LaTeX-Box-Team/LaTeX-Box'
+Plug 'elmcast/elm-vim'
 Plug 'junegunn/vim-journal'
 
 " lints
@@ -189,7 +190,7 @@ let g:LatexBox_Folding = 1
 nnoremap <Leader>G :Goyo<CR>
 
 " syntax
-let g:polyglot_disabled = ['javascript', 'markdown']
+let g:polyglot_disabled = ['javascript', 'markdown', 'elm']
 
 " GitGutter
 highlight link GitGutterAdd DiffAdd
