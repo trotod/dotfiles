@@ -36,11 +36,11 @@
 
 *.scrollBar: false
 
-*.font: xft:Fira Mono:size=9,xft:DejaVu Sans:size=9
-*.boldFont: xft:Fira Mono:size=9:style=Bold,xft:DejaVu Sans:size=9
-*.italicFont: xft:Fira Mono:size=9:style=Italic,xft:DejaVu Sans:size=9
-*.boldItalicFont: xft:Fira Mono:size=9:style=BoldItalic,xft:DejaVu Sans:size=9
-*.letterSpace: -2
+*.font: xft:Fira Mono:pixelsize=12,xft:DejaVu Sans:pixelsize=12
+*.boldFont: xft:Fira Mono:pixelsize=12:style=Bold,xft:DejaVu Sans:pixelsize=12
+*.italicFont: xft:Fira Mono:pixelsize=12:style=Italic,xft:DejaVu Sans:pixelsize=12
+*.boldItalicFont: xft:Fira Mono:pixelsize=12:style=BoldItalic,xft:DejaVu Sans:pixelsize=12
+*.letterSpace: -1
 
 *.colorBD: 12
 *.colorUL: 10
