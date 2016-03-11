@@ -1,0 +1,17 @@
+[include]
+	path = ~/.gitconfig.local
+[push]
+	default = simple
+[alias]
+	co = checkout
+	st = status
+	l = log --graph --decorate --oneline -n 20
+[core]
+	editor = vim
+	excludesfile = /home/me/.gitignore
+[merge]
+	tool = vimdiff
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
