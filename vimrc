@@ -54,6 +54,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " other plugins
+Plug 'embear/vim-localvimrc'
 Plug 'mattn/flappyvird-vim'
 
 call plug#end()
