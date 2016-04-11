@@ -120,6 +120,9 @@ endif
 " Updatetime
 set updatetime=500
 
+" suggested wrap at 80 chars, but don't force.
+set colorcolumn=+81
+
 " }}}
 
 " autocmds {{{
