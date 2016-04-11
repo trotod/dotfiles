@@ -106,10 +106,6 @@ set sidescroll=1
 set splitbelow
 set splitright
 
-" fileformats
-set fileformat=unix
-set fileformats=unix,dos
-
 " Whitespace
 set list listchars=tab:\ \ ,trail:·
 
