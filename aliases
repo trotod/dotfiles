@@ -35,7 +35,6 @@ alias vim='nvim'
 
 # ping
 alias ping='ping -c3'
-alias addon-sdk="cd /opt/addon-sdk && source bin/activate; cd -"
 
 # git
 alias ga='git add'
