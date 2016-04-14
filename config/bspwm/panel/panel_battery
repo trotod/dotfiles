@@ -18,7 +18,7 @@ panel_battery()
 
   batCapacity=$(sed -n p $batCapacity)
 
-  foreground="$WHITE"
+  foreground="$COLOR_FOREGROUND"
   icon=""
   if [[ `cat $batStatus` != "Discharging" ]]; then
     icon=""

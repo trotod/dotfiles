@@ -2,8 +2,8 @@
 
 ! Colors ! {{{
 
-*background: #212121
-*foreground: #f1f1f1
+*background: #f1f1f1
+*foreground: #424242
 *cursorColor: #20bbfc
 ! Black
 *color0: #212121
@@ -36,13 +36,17 @@
 
 *.scrollBar: false
 
-*.font: xft:Fira Mono:pixelsize=13,xft:DejaVu Sans:pixelsize=13
-*.boldFont: xft:Fira Mono:pixelsize=13:style=Bold,xft:DejaVu Sans:pixelsize=13
-*.italicFont: xft:Fira Mono:pixelsize=13:style=Italic,xft:DejaVu Sans:pixelsize=13
-*.boldItalicFont: xft:Fira Mono:pixelsize=13:style=BoldItalic,xft:DejaVu Sans:pixelsize=13
+!*.font: xft:Fira Mono:pixelsize=12,xft:DejaVu Sans:pixelsize=11
+!*.boldFont: xft:Fira Mono:pixelsize=12,xft:DejaVu Sans:pixelsize=11
+!*.italicFont: xft:Fira Mono:pixelsize=12:style=Italic,xft:DejaVu Sans:pixelsize=11
+!*.boldItalicFont: xft:Fira Mono:pixelsize=12:style=Italic,xft:DejaVu Sans:pixelsize=11
+*.font: -lucy-tewi-medium-r-normal--11-90-100-100-c-60-iso10646-1
+*.boldFont: -lucy-tewi-medium-r-normal--11-90-100-100-c-60-iso10646-1
+*.italicFont: -lucy-tewi-medium-r-normal--11-90-100-100-c-60-iso10646-1
+*.boldItalicFont: -lucy-tewi-medium-r-normal--11-90-100-100-c-60-iso10646-1
 
-*.colorBD: 12
-*.colorUL: 10
+*.colorBD: 4
+*.colorUL: 2
 
 *.cursorUnderline: false
 
