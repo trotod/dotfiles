@@ -1,7 +1,12 @@
 #!/bin/sh
 
+# Simple wrapper around calc and dmenu.
+
 DMENU='dmenu -i'
 
 CM1=$(xclip -o)
-CM2=$(echo $CM1 | $DMENU -p Calc: | calc -p)
-[ $CM2 ] && echo $CM2 | xclip -i | echo $CM2 | $DMENU -p Ans:
+CM2=$(echo "$CM1" | $DMENU -p "Calc:" | calc -p)
+if [ "$CM2" ] ; then
+  echo "$CM2" | xclip -i
+  echo "$CM2" | $DMENU -p "Ans:"
+fi

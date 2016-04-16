@@ -1,5 +1,0 @@
-#!/bin/bash
-
-FONT=$(xlsfonts | grep unifont | tail -n1)
-
-urxvtc -fn $FONT -fb $FONT -fi $FONT -fbi $FONT
