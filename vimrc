@@ -186,6 +186,9 @@ let g:EasyMotion_startofline = 0
 " standardjs
 let g:syntastic_javascript_checkers = ['standard']
 
+" javac
+let g:syntastic_java_javac_config_file_enabled = 1
+
 " latexbox
 let g:LatexBox_latexmk_preview_continuously = 1
 let g:LatexBox_Folding = 1
