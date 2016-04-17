@@ -143,6 +143,9 @@ augroup vimrcEx
   " use hypenation in autocompletion
   autocmd Filetype css,scss,sass,less,stylus setlocal iskeyword+=-
 
+  " ts=8 in makefiles
+  autocmd Filetype make setlocal ts=8
+
 augroup END
 
 " }}}
