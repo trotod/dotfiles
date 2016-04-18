@@ -20,25 +20,27 @@ zstyle ':completion:*' menu select
 # colors
 autoload -U colors
 colors
+export CLICOLOR=1
 
 # other goodies
 setopt autopushd pushdminus pushdsilent pushdtohome cdablevars
-
-# use color
-export CLICOLOR=1
 
 # source functions
 for function in ~/.zsh/functions/*; do
   source $function
 done
 
-source $HOME/.aliases
-source $HOME/.zsh_prompt
-if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-  source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-fi
+# source other stuff
+sources=(
+  $HOME/.aliases
+  $HOME/.zsh_prompt
+  $HOME/.bin/z.sh
+  /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+)
 
-[ -f $HOME/.bin/z.sh ] && . $HOME/.bin/z.sh
+for file in "${sources[@]}"; do
+  [ -f "$file" ] && source $file
+done
 
 # $PATH
 typeset -U path
@@ -50,6 +52,11 @@ export GEM_HOME=$(ruby -rubygems -e 'puts Gem.user_dir')
 
 if which rbenv &>/dev/null ; then
   eval "$(rbenv init -)"
+fi
+
+# dircolors
+if [ "$(tput colors)" -eq 256 ] && [ -f $HOME/.colors/LS_COLORS ]; then
+  eval $(dircolors -b $HOME/.colors/LS_COLORS)
 fi
 
 # keychain
