@@ -193,6 +193,9 @@ let g:syntastic_java_javac_config_file_enabled = 1
 let g:LatexBox_latexmk_preview_continuously = 1
 let g:LatexBox_Folding = 1
 
+" pandoc
+let g:pandoc#formatting#mode = 'ha'
+
 " goyo
 nnoremap <Leader>G :Goyo<CR>
 
