@@ -194,7 +194,7 @@ let g:LatexBox_latexmk_preview_continuously = 1
 let g:LatexBox_Folding = 1
 
 " pandoc
-let g:pandoc#formatting#mode = 'ha'
+let g:pandoc#formatting#mode = 'hA'
 
 " goyo
 nnoremap <Leader>G :Goyo<CR>
