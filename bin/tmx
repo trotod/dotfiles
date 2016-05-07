@@ -4,7 +4,7 @@
 # not given.
 
 if [ -z "$1" ] ; then
-  tmux new -As "$(basename "$PWD" | tr '.' '-' | sed 's/^-//')"
+  tmux new -A -c "$PWD" -s "$(basename "$PWD" | tr '.' '-' | sed 's/^-//')"
 else
-  tmux new -As "$1"
+  tmux new -A -c "$1" -s "$1"
 fi
