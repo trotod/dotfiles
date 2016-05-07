@@ -7,6 +7,14 @@
 ehthumbs.db
 Thumbs.db
 
+# Common archives
+*.tar
+*.gz
+*.bz2
+*.xz
+*.zip
+*.7z
+
 # vim
 [._]*.s[a-w][a-z]
 [._]s[a-w][a-z]
