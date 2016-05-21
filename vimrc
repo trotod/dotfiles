@@ -120,9 +120,9 @@ endif
 " Updatetime
 set updatetime=500
 
-" wrap at 78 chars
-set textwidth=78
-set colorcolumn=+2
+" wrap at 79 chars
+set textwidth=79
+set colorcolumn=+1
 
 " }}}
 
