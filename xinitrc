@@ -9,7 +9,7 @@ xset +fp ~/.fonts
 xset fp rehash
 
 xsetroot -cursor_name left_ptr
-hsetroot -solid \#212121
+hsetroot -solid \#f1f1f1
 unclutter -root &
 urxvtd -q -f -o
 dunst &
@@ -19,9 +19,9 @@ xset s noblank
 xset s off
 
 # wallpaper
-if [ -f ~/.wallpaper ]; then
-  hsetroot -fill ~/.wallpaper
-fi
+#if [ -f ~/.wallpaper ]; then
+#  hsetroot -fill ~/.wallpaper
+#fi
 
 # ibus
 export GTK_IM_MODULE=fcitx
