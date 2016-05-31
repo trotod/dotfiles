@@ -33,7 +33,7 @@ panel_battery()
     icon=""
   fi
 
-  echo -n "%{F$foreground}$icon $batCapacity%%%{F-}"
+  echo -n "%{F$foreground}$icon $batCapacity%%{F-}"
 
 }
 
