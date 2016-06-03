@@ -44,10 +44,10 @@
 
 *.scrollBar: false
 
-*.font: xft:Fira Mono:pixelsize=12,xft:DejaVu Sans:pixelsize=11,xft:Symbola:pixelsize=10
-*.boldFont: xft:Fira Mono:pixelsize=12,xft:DejaVu Sans:pixelsize=11,xft:Symbola:pixelsize=10
-*.italicFont: xft:Fira Mono:pixelsize=12:style=Italic,xft:DejaVu Sans:pixelsize=11,xft:Symbola:pixelsize=10
-*.boldItalicFont: xft:Fira Mono:pixelsize=12:style=Italic,xft:DejaVu Sans:pixelsize=11,xft:Symbola:pixelsize=10
+*.font: xft:Fira Mono:pixelsize=12,xft:DejaVu Sans:pixelsize=10,xft:Symbola:pixelsize=10
+*.boldFont: xft:Fira Mono:pixelsize=12,xft:DejaVu Sans:pixelsize=10,xft:Symbola:pixelsize=10
+*.italicFont: xft:Fira Mono:pixelsize=12:style=Italic,xft:DejaVu Sans:pixelsize=10,xft:Symbola:pixelsize=10
+*.boldItalicFont: xft:Fira Mono:pixelsize=12:style=Italic,xft:DejaVu Sans:pixelsize=10,xft:Symbola:pixelsize=10
 !*.font: -lucy-tewi-medium-r-normal--11-90-100-100-c-60-iso10646-1
 !*.boldFont: -lucy-tewi-medium-r-normal--11-90-100-100-c-60-iso10646-1
 !*.italicFont: -lucy-tewi-medium-r-normal--11-90-100-100-c-60-iso10646-1
