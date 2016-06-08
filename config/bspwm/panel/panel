@@ -6,7 +6,7 @@ source $(dirname $0)/panel_battery
 source $(dirname $0)/panel_clock
 source $(dirname $0)/panel_music
 
-if [ $(pgrep -cx panel) -gt 1 ] ; then
+if [ "$(pgrep -cx panel)" -gt 1 ] ; then
   printf "%s\n" "The panel is already running." >&2
   exit 1
 fi
@@ -16,17 +16,17 @@ trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
 [ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
 mkfifo "$PANEL_FIFO"
 
-bspc config top_padding $PANEL_HEIGHT
+bspc config top_padding "$PANEL_HEIGHT"
 bspc control --subscribe > "$PANEL_FIFO" &
 xtitle -sf 'T%s' > "$PANEL_FIFO" &
 
 while true ; do
-  echo "S$(panel_music)  $(panel_battery)  $(panel_clock)" > "$PANEL_FIFO" &
+  echo "S$(panel_music) $(panel_battery) $(panel_clock)" > "$PANEL_FIFO" &
   sleep 1s
 done &
 
-./panel_bar < "$PANEL_FIFO" | lemonbar -g x$PANEL_HEIGHT -f "$FONT1" -f "$FONT2" -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" | \
-  while read line; do
+./panel_bar < "$PANEL_FIFO" | lemonbar -g "x$PANEL_HEIGHT" -o 2 -f "$FONT1" -F "$COLOR_FOREGROUND" -B "$COLOR_BACKGROUND" | \
+  while read -r line; do
     eval "$line";
   done &
 
