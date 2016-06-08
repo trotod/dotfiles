@@ -146,6 +146,9 @@ super + F7
 super + F8
   mpc next
 
+XF86Audio{LowerVolume,RaiseVolume,Mute}
+  amixer set Master {5%-,5%+,toggle}
+
 super + ctrl + x
   pkill -f x11grab
 
