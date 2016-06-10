@@ -14,7 +14,7 @@ sticker_file         "~/.mpd/sticker.sql"
 audio_output {
   type         "alsa"
   name         "My ALSA Device"
-  #mixer_type   "software"
+  mixer_type   "software"
   #mixer_type   "hardware"
   #device       "hw:0"
 }
