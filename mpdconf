@@ -17,6 +17,7 @@ audio_output {
   mixer_type   "software"
   #mixer_type   "hardware"
   #device       "hw:0"
+  auto_resample "no"
 }
 
 audio_output {
@@ -33,4 +34,5 @@ audio_output {
   port         "7700"
   bitrate      "128"
   format       "44100:16:1"
+  tags         "yes"
 }
