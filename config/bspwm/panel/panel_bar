@@ -39,15 +39,15 @@ while read -r line ; do
             ;;
           O*)
             # focused occupied desktop
-            wm_infos="${wm_infos}%{F$COLOR_FOCUSED_OCCUPIED_FG}%{A:bspc desktop --focus ${name}:} ● %{A}%{F-}"
+            wm_infos="${wm_infos}%{F$COLOR_FOCUSED_OCCUPIED_FG}%{A:bspc desktop --focus ${name}:} • %{A}%{F-}"
             ;;
           F*)
             # focused free desktop
-            wm_infos="${wm_infos}%{F$COLOR_FOCUSED_FREE_FG}%{A:bspc desktop --focus ${name}:} ● %{A}%{F-}"
+            wm_infos="${wm_infos}%{F$COLOR_FOCUSED_FREE_FG}%{A:bspc desktop --focus ${name}:} • %{A}%{F-}"
             ;;
           U*)
             # focused urgent desktop
-            wm_infos="${wm_infos}%{F$COLOR_FOCUSED_URGENT_FG}%{A:bspc desktop --focus ${name}:} ● %{A}%{F-}"
+            wm_infos="${wm_infos}%{F$COLOR_FOCUSED_URGENT_FG}%{A:bspc desktop --focus ${name}:} • %{A}%{F-}"
             ;;
           o*)
             # occupied desktop
@@ -59,7 +59,7 @@ while read -r line ; do
             ;;
           u*)
             # urgent desktop
-            wm_infos="${wm_infos}%{F$COLOR_URGENT_FG}%{A:bspc desktop --focus ${name}:} ● %{A}%{F-}"
+            wm_infos="${wm_infos}%{F$COLOR_URGENT_FG}%{A:bspc desktop --focus ${name}:} • %{A}%{F-}"
             ;;
           L*)
             # layout

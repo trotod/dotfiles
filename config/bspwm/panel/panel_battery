@@ -4,7 +4,7 @@ source $(dirname $0)/panel_config
 
 panel_battery()
 {
-  echo -n "%{F$foreground}$icon $(battery -n 1)%%{F-}"
+  echo -n "%{F$foreground}$icon $(battery)%%{F-}"
 }
 
 # vim:set ft=sh:
