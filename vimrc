@@ -47,6 +47,7 @@ Plug 'itchyny/thumbnail.vim'
 Plug 'tpope/vim-surround'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'godlygeek/tabular'
+Plug 'mattn/emmet-vim'
 
 " interop
 Plug 'christoomey/vim-tmux-navigator'
@@ -207,6 +208,13 @@ highlight link GitGutterAdd DiffAdd
 highlight link GitGutterChange DiffChange
 highlight link GitGutterDelete DiffDelete
 highlight link GitGutterChangeDelete GitGutterChange
+
+" emmet
+let g:user_emmet_settings = {
+  \ 'html': {
+    \ 'indentation': '  '
+    \ },
+  \ }
 
 " }}}
 
