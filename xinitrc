@@ -19,9 +19,9 @@ xset s noblank
 xset s off
 
 # wallpaper
-#if [ -f ~/.wallpaper ]; then
-#  hsetroot -fill ~/.wallpaper
-#fi
+if [ -f ~/.wallpaper ]; then
+  hsetroot -fill ~/.wallpaper
+fi
 
 # ibus
 export GTK_IM_MODULE=fcitx
