@@ -3,8 +3,5 @@
 # Creates or attaches session based on given name, or the directory name if
 # not given.
 
-if [ -z "$1" ] ; then
-  tmux new -A -c "$PWD" -s "$(basename "$PWD" | tr '.' '-' | sed 's/^-//')"
-else
-  tmux new -A -c "$1" -s "$1"
-fi
+dir=${1:-$PWD}
+tmux new -A -c "$dir" -s "$(basename "$dir" | tr '.' '-' | sed 's/^-//')"
