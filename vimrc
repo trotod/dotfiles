@@ -184,8 +184,18 @@ map <Leader>k <Plug>(easymotion-k)
 map <Leader>h <Plug>(easymotion-linebackward)
 let g:EasyMotion_startofline = 0
 
+" syntastic
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 " standardjs
 let g:syntastic_javascript_checkers = ['standard']
+
+" elm
+let g:elm_syntastic_show_warnings = 1
+let g:elm_format_autosave = 1 " requires elm-format
 
 " javac
 let g:syntastic_java_javac_config_file_enabled = 1
