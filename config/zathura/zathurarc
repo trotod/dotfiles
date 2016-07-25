@@ -1,6 +1,6 @@
 # ~/.config/zathura/zathurarc
 
-set font                        "Source Code Pro 10"
+set font                        "sans 10"
 set default-bg                  "#212121"
 set default-fg                  "#424242"
 

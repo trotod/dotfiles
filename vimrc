@@ -154,7 +154,7 @@ augroup END
 " gui {{{
 
 if has('gui_running')
-  set guifont=Fira\ Mono
+  set guifont=monospace
   set guioptions=
 endif
 
