@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# Creates a terminal window based on drawn size.
+# Requires: urxvt, slop, xdotool
+
+slopoutput="$(slop -f '%w %h %x %y')"
+[ "$?" -ne 0 ] && exit "$?"
+
+W=$(echo "$slopoutput" | awk '{print $1}')
+H=$(echo "$slopoutput" | awk '{print $2}')
+X=$(echo "$slopoutput" | awk '{print $3}')
+Y=$(echo "$slopoutput" | awk '{print $4}')
+
+urxvtc
+sleep .01
+xdotool getactivewindow windowsize "$W" "$H"
+xdotool getactivewindow windowmove "$X" "$Y"

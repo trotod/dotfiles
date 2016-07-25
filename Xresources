@@ -54,6 +54,8 @@
 
 *.cursorUnderline: false
 
+URxvt.geometry: 100x30
+
 ! }}}
 
 ! vim:foldmethod=marker:filetype=xdefaults:cms=!%s:

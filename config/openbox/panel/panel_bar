@@ -1,0 +1,10 @@
+#!/bin/sh
+
+while read -r line; do
+  case $line in
+    C*)
+      clock_infos="${line#?}"
+      ;;
+  esac
+  printf "%s\n" "%{r}$clock_infos  "
+done

@@ -1,0 +1,32 @@
+#!/bin/sh
+
+#
+# Exit if a panel is already running.
+#
+
+if [ "$(pgrep -cx panel)" -gt 1 ]; then
+  printf "%s\n" "The panel is already running." >&2
+  exit 1
+fi
+
+trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
+
+#
+# Pipe things to panel.
+#
+
+[ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
+mkfifo "$PANEL_FIFO"
+
+clock -sf 'C%H:%M' > "$PANEL_FIFO" &
+
+#
+# Pipe through lemonbar, lemonbar stdout get eval'd.
+#
+
+"$(dirname "$0")/panel_bar" < "$PANEL_FIFO" \
+  | lemonbar -g "x36" -B "#212121" -F "#d9d9d9" \
+             -f "Sans:size=12" -f "Symbola:size=11" \
+  | while read -r line; do eval "$line"; done &
+
+wait
