@@ -176,55 +176,21 @@
   </dock>
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
+
     <!-- Keybindings for desktop switching -->
     <keybind key="W-bracketleft">
       <action name="GoToDesktop">
         <to>left</to>
-        <wrap>yes</wrap>
       </action>
     </keybind>
     <keybind key="W-bracketright">
       <action name="GoToDesktop">
         <to>right</to>
-        <wrap>yes</wrap>
       </action>
     </keybind>
-    <!--
-    <keybind key="C-A-Up">
+    <keybind key="W-grave">
       <action name="GoToDesktop">
-        <to>up</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="C-A-Down">
-      <action name="GoToDesktop">
-        <to>down</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    -->
-    <keybind key="S-A-Left">
-      <action name="SendToDesktop">
-        <to>left</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="S-A-Right">
-      <action name="SendToDesktop">
-        <to>right</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="S-A-Up">
-      <action name="SendToDesktop">
-        <to>up</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="S-A-Down">
-      <action name="SendToDesktop">
-        <to>down</to>
-        <wrap>no</wrap>
+        <to>last</to>
       </action>
     </keybind>
     <keybind key="W-1">
@@ -247,25 +213,43 @@
         <to>4</to>
       </action>
     </keybind>
+    <keybind key="W-S-1">
+      <action name="SendToDesktop">
+        <to>1</to>
+      </action>
+    </keybind>
+    <keybind key="W-S-2">
+      <action name="SendToDesktop">
+        <to>2</to>
+      </action>
+    </keybind>
+    <keybind key="W-S-3">
+      <action name="SendToDesktop">
+        <to>3</to>
+      </action>
+    </keybind>
+    <keybind key="W-S-4">
+      <action name="SendToDesktop">
+        <to>4</to>
+      </action>
+    </keybind>
     <keybind key="W-d">
       <action name="ToggleShowDesktop"/>
     </keybind>
+
     <!-- Keybindings for windows -->
-    <keybind key="W-x">
+    <keybind key="W-S-x">
       <action name="Close"/>
     </keybind>
-    <!--
-    <keybind key="A-Escape">
-      <action name="Lower"/>
-      <action name="FocusToBottom"/>
-      <action name="Unfocus"/>
+    <keybind key="A-F4">
+      <action name="Close"/>
     </keybind>
-    -->
     <keybind key="A-space">
       <action name="ShowMenu">
         <menu>client-menu</menu>
       </action>
     </keybind>
+
     <!-- Keybindings for window switching -->
     <keybind key="W-Tab">
       <action name="NextWindow">
@@ -285,19 +269,7 @@
         </finalactions>
       </action>
     </keybind>
-    <!--
-    <keybind key="C-A-Tab">
-      <action name="NextWindow">
-        <panels>yes</panels>
-        <desktop>yes</desktop>
-        <finalactions>
-          <action name="Focus"/>
-          <action name="Raise"/>
-          <action name="Unshade"/>
-        </finalactions>
-      </action>
-    </keybind>
-    -->
+
     <!-- Keybindings for window switching with the arrow keys -->
     <keybind key="W-l">
       <action name="DirectionalCycleWindows">
@@ -325,6 +297,17 @@
     <keybind key="W-f">
       <action name="ToggleFullscreen"/>
     </keybind>
+
+    <!-- Keybindings for managing Openbox -->
+    <keybind key="W-Escape">
+      <action name="Reconfigure"/>
+    </keybind>
+    <keybind key="W-A-S-Escape">
+      <action name="Exit">
+        <prompt>no</prompt>
+      </action>
+    </keybind>
+
     <!-- Keybindings for running applications -->
     <keybind key="W-Return">
       <action name="Execute">
@@ -356,17 +339,7 @@
         <command>scrot --focused '%Y%m%d%H%M%S.png'</command>
       </action>
     </keybind>
-    <!--
-    <keybind key="W-e">
-      <action name="Execute">
-        <startupnotify>
-          <enabled>true</enabled>
-          <name>Konqueror</name>
-        </startupnotify>
-        <command>kfmclient openProfile filemanagement</command>
-      </action>
-    </keybind>
-    -->
+
   </keyboard>
   <mouse>
     <dragThreshold>1</dragThreshold>
