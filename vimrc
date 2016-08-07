@@ -162,7 +162,7 @@ endif
 
 " colors {{{
 
-set background=light
+set background=dark
 colors pencil
 
 " }}}
