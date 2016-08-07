@@ -29,11 +29,9 @@ export XMODIFIERS=@im=fcitx
 export QT_IM_MODULE=fcitx
 fcitx
 
-# bspwm
+# panel
 export PANEL_FIFO=/tmp/panel.fifo
-export BSPWM_TREE=/tmp/bspwm.tree
-export BSPWM_HISTORY=/tmp/bspwm.history
-export BSPWM_STACK=/tmp/bspwm.stack
+~/.config/openbox/panel/panel &
 
 if [ -d /etc/X11/xinit/xinitrc.d ]; then
   for f in /etc/X11/xinit/xinitrc.d/*; do
