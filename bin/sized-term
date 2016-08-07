@@ -3,8 +3,7 @@
 # Creates a terminal window based on drawn size.
 # Requires: urxvt, slop, xdotool
 
-slopoutput="$(slop -f '%w %h %x %y')"
-[ "$?" -ne 0 ] && exit "$?"
+slopoutput="$(slop -f '%w %h %x %y')" || exit 1
 
 W=$(echo "$slopoutput" | awk '{print $1}')
 H=$(echo "$slopoutput" | awk '{print $2}')
