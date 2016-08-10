@@ -6,5 +6,5 @@ while read -r line; do
       clock_infos="${line#?}"
       ;;
   esac
-  printf "%s\n" "%{r}$clock_infos  "
+  printf "%s\n" " $title_infos%{r}$clock_infos "
 done

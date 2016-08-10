@@ -3,5 +3,5 @@
 /usr/bin/dmenu \
   -sb "#424242" \
   -sf "#f1f1f1" \
-  -fn "sans:size=10" \
+  -fn "-lucy-tewi-medium-r-normal--11-90-100-100-c-60-iso10646-1" \
   "$@"

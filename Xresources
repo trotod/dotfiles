@@ -1,5 +1,7 @@
 ! ~/.Xresources
 
+#define tewi -lucy-tewi-medium-r-normal--11-90-100-100-c-60-iso10646-1
+
 ! Colors {{{
 
 *background: #212121
@@ -44,10 +46,10 @@
 
 *.scrollBar: false
 
-*.font: xft:monospace:size=10,xft:DejaVu Sans:size=8,xft:Symbola:size=8
-*.boldFont: xft:monospace:size=10,xft:DejaVu Sans:size=8,xft:Symbola:size=8
-*.italicFont: xft:monospace:size=10,xft:DejaVu Sans:size=8,xft:Symbola:size=8
-*.boldItalicFont: xft:monospace:size=10,xft:DejaVu Sans:size=8,xft:Symbola:size=8
+*.font: tewi
+*.boldFont: tewi
+*.italicFont: tewi
+*.boldItalicFont: tewi
 
 *.colorBD: 12
 *.colorUL: 10

@@ -31,8 +31,8 @@ clock -sf 'C%H:%M' > "$PANEL_FIFO" &
 #
 
 ./panel_bar < "$PANEL_FIFO" \
-  | lemonbar -B "#212121" -F "#d9d9d9" \
-             -f "Sans:size=10" -f "Symbola:size=9" \
+  | lemonbar -B "#212121" -F "#f1f1f1" \
+             -f "-lucy-tewi-medium-r-normal--11-90-100-100-c-60-iso10646-1" \
   | sh &
 
 wait
