@@ -1,5 +1,7 @@
 #!/bin/sh
 
+cd "$(dirname "$0")" || exit 1
+
 #
 # Exit if a panel is already running.
 #
@@ -9,7 +11,11 @@ if [ "$(pgrep -cx panel)" -gt 1 ]; then
   exit 1
 fi
 
-trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
+#
+# Cleanup and kill child processes.
+#
+
+trap 'pkill -P $$' INT TERM QUIT EXIT
 
 #
 # Pipe things to panel.
@@ -24,7 +30,7 @@ clock -sf 'C%H:%M' > "$PANEL_FIFO" &
 # Pipe through lemonbar, lemonbar stdout get eval'd.
 #
 
-"$(dirname "$0")/panel_bar" < "$PANEL_FIFO" \
+./panel_bar < "$PANEL_FIFO" \
   | lemonbar -B "#212121" -F "#d9d9d9" \
              -f "Sans:size=10" -f "Symbola:size=9" \
   | sh &
