@@ -23,3 +23,6 @@ indent_style = tab
 
 [.gitconfig*]
 indent_style = tab
+
+[*.fish]
+indent_style = tab

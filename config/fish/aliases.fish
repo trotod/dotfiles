@@ -1,8 +1,8 @@
 # directory listings
-alias ls='ls -hF --color=auto'
+alias ls='ls -hF --color=auto --group-directories-first'
 alias la='ls -A'
 alias ll='ls -l'
-alias l='ls -CF'
+alias l='ls'
 alias sl='ls'
 
 # human numbers
@@ -12,7 +12,7 @@ alias du='du -ch'
 # for your safety...
 alias cp='cp -i'
 alias mv='mv -i'
-alias rm='rm -I'
+alias rm='rm -i'
 
 # grep colors
 alias grep='grep --color'
@@ -27,8 +27,21 @@ alias be='bundle exec'
 alias so='source'
 
 # edit todo
-alias todo='$EDITOR ~/.todo'
+alias todo='eval $EDITOR ~/.todo'
 
 # shortcuts
-alias e='$EDITOR'
-alias v='vim'
+alias e='eval $EDITOR'
+alias vim='nvim'
+
+# ping
+alias ping='ping -c3'
+
+# git
+alias ga='git add'
+alias gc='git commit'
+alias gca='git commit -a'
+alias gcm='git commit -m'
+alias gcam='git commit -am'
+
+# clear
+alias c='clear'
