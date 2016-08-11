@@ -1,0 +1,38 @@
+#
+# ~/.config/sxhkd/sxhkdrc
+#
+
+# Terminal emulators
+
+super + Return
+  urxvtc
+
+super + shift + Return
+  sized-term
+
+# Dmenu based applications
+
+super + space
+  dmenu_run
+
+super + c
+  dmenu_calc
+
+super + p
+  passmenu --type
+
+# Screenshots
+
+Print
+  scrot '%Y%m%d%H%M%S.png'
+
+alt + Print
+  scrot --focused '%Y%m%d%H%M%S.png'
+
+# Applications
+
+super + w
+  chromium
+
+super + z
+  zathura
