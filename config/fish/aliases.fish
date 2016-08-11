@@ -12,7 +12,7 @@ alias du='du -ch'
 # for your safety...
 alias cp='cp -i'
 alias mv='mv -i'
-alias rm='rm -i'
+alias rm='rm -I'
 
 # grep colors
 alias grep='grep --color'
