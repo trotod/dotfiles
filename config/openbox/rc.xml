@@ -798,13 +798,11 @@
     <application name="*">
       <decor>no</decor>
     </application>
-    <application name="urxvt">
-      <layer>above</layer>
-    </application>
     <application role="browser">
       <desktop>2</desktop>
       <focus>yes</focus>
       <maximized>true</maximized>
+      <layer>below</layer>
     </application>
     <application name="zathura">
       <desktop>3</desktop>
