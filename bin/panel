@@ -1,7 +1,5 @@
 #!/bin/sh
 
-cd "$(dirname "$0")" || exit 1
-
 #
 # Exit if a panel is already running.
 #
@@ -18,22 +16,45 @@ fi
 trap 'pkill -P $$' INT TERM QUIT EXIT
 
 #
-# Pipe things to panel.
+# Read from a FIFO.
 #
 
+PANEL_FIFO=${PANEL_FIFO:-/tmp/panel.fifo}
 [ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
 mkfifo "$PANEL_FIFO"
 
-xtitle -sf 'T%s' > "$PANEL_FIFO" &
-clock -sf 'C%H:%M' > "$PANEL_FIFO" &
+#
+# Parse infos.
+#
+
+parse() {
+  while read -r line; do
+    case $line in
+      C*)
+        clock_infos="${line#?}"
+        ;;
+      T*)
+        title_infos="${line#?}"
+        ;;
+    esac
+    printf "%s\n" " $title_infos%{r} $clock_infos "
+  done
+}
 
 #
 # Pipe through lemonbar, lemonbar stdout get eval'd.
 #
 
-./panel_bar < "$PANEL_FIFO" \
+parse < "$PANEL_FIFO" \
   | lemonbar -B "#212121" -F "#f1f1f1" \
              -f "-lucy-tewi-medium-r-normal--11-90-100-100-c-60-iso10646-1" \
   | sh &
+
+#
+# Subscribe to new information.
+#
+
+xtitle -sf 'T%s' > "$PANEL_FIFO" &
+clock -sf 'C%H:%M' > "$PANEL_FIFO" &
 
 wait
