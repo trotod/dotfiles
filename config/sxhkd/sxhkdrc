@@ -37,6 +37,11 @@ Print
 alt + Print
   scrot --focused '%Y%m%d%H%M%S.png'
 
+# Music controls
+
+XF86Audio{Prev,Play,Next}
+  mpc -q {prev,toggle,next}
+
 # Applications
 
 super + w
