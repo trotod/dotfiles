@@ -776,5 +776,13 @@
       <focus>yes</focus>
       <maximized>true</maximized>
     </application>
+    <application name="chat">
+      <desktop>all</desktop>
+      <layer>above</layer>
+      <position>
+        <x>-48</x>
+        <y>-0</y>
+      </position>
+    </application>
   </applications>
 </openbox_config>

@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# Fancy chat popup thing.
+
+if ! tmux has-session -t chat 2>/dev/null; then
+  tmux new-session -ds chat weechat \; set-option status off \; set-option set-titles off
+fi
+
+urxvtc -title chat -name chat -e tmux attach-session -t chat
