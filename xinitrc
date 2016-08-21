@@ -14,9 +14,9 @@ unclutter -root &
 urxvtd -q -f -o
 dunst &
 
-# no screensaver
 xset s noblank
 xset s off
+xss-lock -- lock &
 
 # wallpaper
 if [ -f ~/.wallpaper ]; then

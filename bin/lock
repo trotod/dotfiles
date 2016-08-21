@@ -1,0 +1,12 @@
+#!/bin/sh
+
+screenshot="$(mktemp --tmpdir screenshot-XXXXXXXX.png)"
+lockpaper="$(mktemp --tmpdir lockpaper-XXXXXXXX.png)"
+
+scrot -z "$screenshot"
+convert "$screenshot" -blur 0x3 "$lockpaper"
+rm "$screenshot"
+
+i3lock -i "$lockpaper" -n
+
+rm "$lockpaper"

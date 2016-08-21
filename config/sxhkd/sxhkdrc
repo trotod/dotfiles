@@ -2,6 +2,11 @@
 # ~/.config/sxhkd/sxhkdrc
 #
 
+# Lock
+
+super + alt + shift + shift + l
+  lock
+
 # Terminal emulators
 
 super + Return
