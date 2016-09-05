@@ -1,38 +1,38 @@
 #
-# ~/.mpdconf
+# mpdconf
 #
 
-music_directory      "~/Music"
-playlist_directory   "~/.mpd/playlists"
-db_file              "~/.mpd/database"
-log_file             "~/.mpd/log"
-pid_file             "~/.mpd/pid"
-state_file           "~/.mpd/state"
-sticker_file         "~/.mpd/sticker.sql"
+# General configuration.
+music_directory "~/Music"
+playlist_directory "~/.mpd/playlists"
+db_file "~/.mpd/database"
+pid_file "~/.mpd/pid"
+state_file "~/.mpd/state"
+sticker_file "~/.mpd/sticker.sql"
 
-# audio outputs
+# Alsa (sound) output.
 audio_output {
-  type         "alsa"
-  name         "My ALSA Device"
-  mixer_type   "software"
-  #mixer_type   "hardware"
-  #device       "hw:0"
+  type "alsa"
+  name "My ALSA Device"
+  mixer_type "software"
   auto_resample "no"
 }
 
+# Visualizer (for ncmpcpp).
 audio_output {
-  type         "fifo"
-  name         "Visualizer feed"
-  path         "/tmp/mpd.fifo"
-  format       "44100:16:1"
+  type "fifo"
+  name "Visualizer feed"
+  path "/tmp/mpd.fifo"
+  format "44100:16:1"
 }
 
+# HTTP streaming.
 audio_output {
-  type         "httpd"
-  name         "My HTTP Stream"
-  encoder      "lame"
-  port         "7700"
-  bitrate      "128"
-  format       "44100:16:1"
-  tags         "yes"
+  type "httpd"
+  name "My HTTP Stream"
+  encoder "lame"
+  port "7700"
+  bitrate "128"
+  format "44100:16:1"
+  tags "yes"
 }
