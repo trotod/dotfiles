@@ -26,3 +26,6 @@ indent_style = tab
 
 [*.fish]
 indent_style = tab
+
+[*.elm]
+indent_size=4
