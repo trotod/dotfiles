@@ -1,8 +1,8 @@
 #!/bin/sh
+
 #
-# ~/.xinitrc
+# xinitrc
 #
-# Executed by startx (run your window manager from here)
 
 xrdb ~/.Xresources
 xset +fp ~/.fonts
