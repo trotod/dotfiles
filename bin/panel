@@ -55,6 +55,6 @@ parse < "$PANEL_FIFO" \
 #
 
 xtitle -sf 'T%s' > "$PANEL_FIFO" &
-clock -sf 'C%H:%M' > "$PANEL_FIFO" &
+clock -sf 'C%a %H:%M' > "$PANEL_FIFO" &
 
 wait
