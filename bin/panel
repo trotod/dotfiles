@@ -46,7 +46,7 @@ parse() {
 #
 
 parse < "$PANEL_FIFO" \
-  | lemonbar -B "#212121" -F "#f1f1f1" \
+  | lemonbar -d -B "#212121" -F "#f1f1f1" \
              -f "-lucy-tewi-medium-r-normal--11-90-100-100-c-60-iso10646-1" \
   | sh &
 
