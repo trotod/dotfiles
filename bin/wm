@@ -1,0 +1,47 @@
+#!/bin/sh
+
+restack() {
+  xdotool search --onlyvisible --class "chromium" \
+    | xargs printf "0x%08x\n" \
+    | tac \
+    | xargs -n1 chwso -l
+}
+
+get_class() {
+  xprop -id "$1" -notype WM_CLASS | cut -d' ' -f4 | tr -d '",'
+}
+
+on_xcb_create_notify() {
+  wid=$1
+  wm_class=$(get_class "$wid")
+
+  case "$wm_class" in
+    # URxvt: set transparency
+    URxvt|urxvt) compton-trans 93 -w "$wid" ;;
+  esac
+}
+
+on_xcb_map_notify() {
+  wid=$1
+  wm_class=$(get_class "$wid")
+
+  case "$wm_class" in
+    chromium) restack ;;
+  esac
+}
+
+on_xcb_unmap_notify() {
+  wid=$1
+}
+
+main() {
+  while IFS=: read -r ev wid; do
+    case $ev in
+      16) on_xcb_create_notify "$wid" ;;
+      19) on_xcb_map_notify "$wid" ;;
+      18) on_xcb_unmap_notify "$wid" ;;
+    esac
+  done
+}
+
+wew | main

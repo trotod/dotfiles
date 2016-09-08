@@ -47,4 +47,6 @@ fi
 urxvtc -e tmx # TODO maximize this
 chromium &
 
-exec openbox
+# TODO just use wm
+wm &
+exec cwm
