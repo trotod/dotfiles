@@ -16,7 +16,7 @@ dunst &
 
 xset s noblank
 xset s off
-xss-lock -- lock &
+#xss-lock -- lock &
 
 # wallpaper
 if [ -f ~/.wallpaper ]; then
