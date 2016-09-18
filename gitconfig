@@ -7,11 +7,16 @@
 	st = status
 	l = log --graph --decorate --oneline -n 20
 [core]
-	editor = vim
+	editor = nvim
 	excludesfile = /home/me/.gitignore
 	pager = diff-so-fancy | less --tabs=4 -RFX
 [merge]
 	tool = vimdiff
+[mergetool]
+	prompt = true
+# https://github.com/neovim/neovim/issues/2377#issuecomment-126092442
+[mergetool "vimdiff"]
+	cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
