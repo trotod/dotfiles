@@ -5,12 +5,11 @@
 
 slopoutput="$(slop -t 0 -f '%w %h %x %y')" || exit 1
 
-W=$(echo "$slopoutput" | awk '{print $1}')
-H=$(echo "$slopoutput" | awk '{print $2}')
-X=$(echo "$slopoutput" | awk '{print $3}')
-Y=$(echo "$slopoutput" | awk '{print $4}')
-
-urxvtc
-sleep .01
-xdotool getactivewindow windowsize "$W" "$H"
-xdotool getactivewindow windowmove "$X" "$Y"
+echo "$slopoutput" \
+  | {
+      read -r w h x y
+      urxvtc
+      sleep .01 # hack
+      xdotool getactivewindow windowsize "$w" "$h"
+      xdotool getactivewindow windowmove "$x" "$y"
+    }
