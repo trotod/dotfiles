@@ -26,9 +26,6 @@ alias be='bundle exec'
 # source files
 alias so='source'
 
-# edit todo
-alias todo='eval $EDITOR ~/.todo'
-
 # shortcuts
 alias e='eval $EDITOR'
 alias vim='nvim'
