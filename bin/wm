@@ -28,10 +28,15 @@ on_xcb_map_notify() {
   case "$wm_class" in
     chromium) restack ;;
   esac
+
+  wattr o "$wid" || wtf "$wid"
 }
 
 on_xcb_unmap_notify() {
   wid=$1
+
+  win="$(lsw | tail -n1)"
+  wattr o "$win" || wtf "$wid"
 }
 
 main() {
