@@ -1,6 +1,6 @@
 call plug#begin('~/.config/vim-plugins')
 Plug 'LaTeX-Box-Team/LaTeX-Box'
-Plug 'Lokaltog/vim-easymotion'
+Plug 'easymotion/vim-easymotion'
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
 Plug 'christoomey/vim-tmux-navigator'
