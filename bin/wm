@@ -17,7 +17,7 @@ on_xcb_create_notify() {
 
   case "$wm_class" in
     # URxvt: set transparency
-    URxvt|urxvt) compton-trans 93 -w "$wid" ;;
+    URxvt|urxvt) compton-trans 90 -w "$wid" ;;
   esac
 }
 
