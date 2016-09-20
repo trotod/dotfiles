@@ -20,7 +20,7 @@ xset s off
 
 # wallpaper
 if [ -f ~/.wallpaper ]; then
-  hsetroot -fill ~/.wallpaper
+  hsetroot -center ~/.wallpaper
 fi
 
 # ibus
