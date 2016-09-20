@@ -36,7 +36,7 @@ on_xcb_unmap_notify() {
   wid=$1
 
   win="$(lsw | tail -n1)"
-  wattr o "$win" || wtf "$wid"
+  wattr o "$win" || wtf "$win"
 }
 
 main() {
