@@ -1,10 +1,22 @@
 #!/bin/sh
 
+lastfocused=
+
 restack() {
   xdotool search --onlyvisible --class "chromium" \
     | xargs printf "0x%08x\n" \
     | tac \
     | xargs -n1 chwso -l
+}
+
+# shellcheck disable=SC2046
+focus() {
+  wid=$1
+  wattr o "$wid" && return
+  wtf "$wid"
+  wmp -a $(wattr xy "$wid")
+  wmp -r $(wattr wh "$wid")
+  lastfocused=$wid
 }
 
 get_class() {
@@ -19,6 +31,8 @@ on_xcb_create_notify() {
     # URxvt: set transparency
     URxvt|urxvt) compton-trans 90 -w "$wid" ;;
   esac
+
+  focus "$wid"
 }
 
 on_xcb_map_notify() {
@@ -29,14 +43,13 @@ on_xcb_map_notify() {
     chromium) restack ;;
   esac
 
-  wattr o "$wid" || wtf "$wid"
+  focus "$wid"
 }
 
 on_xcb_unmap_notify() {
   wid=$1
-
-  win="$(lsw | tail -n1)"
-  wattr o "$win" || wtf "$win"
+  win=$(lsw | tail -n1)
+  test "$win" != "$lastfocused" && focus "$win"
 }
 
 main() {
