@@ -10,7 +10,7 @@ xset fp rehash
 
 xsetroot -cursor_name left_ptr
 hsetroot -solid \#f1f1f1
-unclutter -root &
+unclutter -root -noevents &
 urxvtd -q -f -o
 dunst &
 
