@@ -32,7 +32,7 @@ XF86Audio{Lower,Raise}Volume
   vol 5%{-,+}
 
 XF86AudioMute
-  amixer set Master toggle
+  vol toggle
 
 # Screenshots
 
