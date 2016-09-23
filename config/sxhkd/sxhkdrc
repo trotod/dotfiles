@@ -2,6 +2,14 @@
 # ~/.config/sxhkd/sxhkdrc
 #
 
+# WM
+
+super + {shift + ,_} Tab
+  focus.sh {prev, next}
+
+super + shift + x
+  killw (pfw)
+
 # Lock
 
 super + alt + shift + shift + l

@@ -1,59 +1,37 @@
 #!/bin/sh
+#
+# Window manager.
+# Dependencies: wmutils, wew, xprop
 
-lastfocused=
-
-restack() {
-  xdotool search --onlyvisible --class "chromium" \
-    | xargs printf "0x%08x\n" \
-    | tac \
-    | xargs -n1 chwso -l
-}
-
-# shellcheck disable=SC2046
-focus() {
-  wid=$1
-  wattr o "$wid" && return
-  wtf "$wid"
-  wmp -a $(wattr xy "$wid")
-  wmp -r $(wattr wh "$wid")
-  lastfocused=$wid
+get_class_name() {
+  xprop -id "$1" WM_CLASS | cut -d' ' -f3 | tr -d '",'
 }
 
 get_class() {
-  xprop -id "$1" -notype WM_CLASS | cut -d' ' -f4 | tr -d '",'
+  xprop -id "$1" WM_CLASS | cut -d' ' -f4 | tr -d '",'
 }
 
 on_xcb_create_notify() {
-  wid=$1
-  wm_class=$(get_class "$wid")
-
-  case "$wm_class" in
-    # URxvt: set transparency
-    URxvt|urxvt) compton-trans 90 -w "$wid" ;;
+  # shellcheck disable=SC2046
+  wmv -a $(wmp) "$1"
+  class=$(get_class "$1")
+  case $class in
+    URxvt) compton-trans 90 -w "$1" ;;
   esac
-
-  focus "$wid"
 }
 
 on_xcb_map_notify() {
-  wid=$1
-  wm_class=$(get_class "$wid")
-
-  case "$wm_class" in
-    chromium) restack ;;
-  esac
-
-  focus "$wid"
+  focus.sh "$1"
 }
 
 on_xcb_unmap_notify() {
-  wid=$1
-  win=$(lsw | tail -n1)
-  test "$win" != "$lastfocused" && focus "$win"
+  # Don't remap if the window was unmapped by some other visible window.
+  wattr m "$(pfw)" || focus.sh prev
 }
 
 main() {
-  while IFS=: read -r ev wid; do
+  wew | while IFS=: read -r ev wid; do
+    wattr o "$wid" ||
     case $ev in
       16) on_xcb_create_notify "$wid" ;;
       19) on_xcb_map_notify "$wid" ;;
@@ -62,4 +40,4 @@ main() {
   done
 }
 
-wew | main
+main

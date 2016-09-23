@@ -43,6 +43,5 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 
-# TODO just use wm
-wm &
-exec cwm
+swm &
+exec wm-loop >/tmp/wm.log 2>&1
