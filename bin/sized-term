@@ -1,15 +1,14 @@
 #!/bin/sh
 #
 # Creates a terminal window based on drawn size.
-# Requires: urxvt, slop, xdotool
+# Requires: urxvt, slop, wmutils
 
 slopoutput="$(slop -t 0 -f '%w %h %x %y')" || exit 1
 
-echo "$slopoutput" \
-  | {
-      read -r w h x y
-      urxvtc
-      sleep .01 # hack
-      xdotool getactivewindow windowsize "$w" "$h"
-      xdotool getactivewindow windowmove "$x" "$y"
-    }
+read -r w h x y << EOF
+$slopoutput
+EOF
+
+urxvtc
+sleep .01 # hack
+wtp "$x" "$y" "$w" "$h" "$(pfw)"
