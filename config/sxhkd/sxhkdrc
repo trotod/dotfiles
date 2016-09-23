@@ -10,6 +10,12 @@ super + {shift + ,_} Tab
 super + shift + x
   killw (pfw)
 
+super + {1-9}
+  groups.sh -t {1-9}
+
+super + shift + {1-9}
+  wattr (pfw); and groups.sh -s (pfw) {1-9}
+
 # Lock
 
 super + alt + shift + shift + l
