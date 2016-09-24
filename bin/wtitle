@@ -2,15 +2,30 @@
 #
 # Outputs the title of the focused window continuously.
 # Usage: wtitle [format]
-# Dependencies: wmutils, wew, wname
+# Dependencies: wmutils, wew, xprop
+
+# The async stuff is so hackish...
 
 format=${1:-"%s"}
+last_wid=
+
+get_window_title() {
+  xprop -spy -id "$1" -notype WM_NAME \
+    | stdbuf -o0 sed -n -r 's/WM_NAME = "(.*)"/\1/p'
+}
 
 wew -m 2097152 | while IFS=: read -r ev wid; do
   case $ev in
     9)
-      # shellcheck disable=SC2059
-      printf "$format\n" "$(wname "$wid")"
+      if [ ! -z "$last_wid" ]; then
+        pkill -fx "xprop -spy -id $last_wid -notype WM_NAME"
+      fi
+
+      get_window_title "$wid" | while read -r name; do
+        # shellcheck disable=SC2059
+        printf "$format\n" "$name"
+      done &
+      last_wid=$wid
       ;;
   esac
 done
