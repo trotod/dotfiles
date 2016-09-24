@@ -17,15 +17,19 @@ get_window_title() {
 wew -m 2097152 | while IFS=: read -r ev wid; do
   case $ev in
     9)
-      if [ ! -z "$last_wid" ]; then
-        pkill -fx "xprop -spy -id $last_wid -notype WM_NAME"
-      fi
-
       get_window_title "$wid" | while read -r name; do
         # shellcheck disable=SC2059
         printf "$format\n" "$name"
       done &
       last_wid=$wid
+      ;;
+    10)
+      if [ ! -z "$last_wid" ]; then
+        pkill -fx "xprop -spy -id $last_wid -notype WM_NAME"
+      fi
+      last_wid=
+      # shellcheck disable=SC2059
+      printf "$format\n" ""
       ;;
   esac
 done
