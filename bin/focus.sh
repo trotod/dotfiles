@@ -2,6 +2,7 @@
 #
 # Focuses a window.
 # Usage: focus.sh <prev|next|wid>
+# Dependencies: wmutils, xwinfo
 
 cur=$(pfw)
 
@@ -19,6 +20,15 @@ EOF
   wmp -a $((w/2)) $((h/2))
   exit
 fi
+
+case $(xwinfo -c "$wid") in
+  chromium)
+    restack
+    ;;
+  *)
+    chwso -r "$wid"
+    ;;
+esac
 
 wtf "$wid"
 
