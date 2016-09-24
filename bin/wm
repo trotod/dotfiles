@@ -1,21 +1,12 @@
 #!/bin/sh
 #
 # Window manager.
-# Dependencies: wmutils, wew, xprop
-
-get_class_name() {
-  xprop -id "$1" WM_CLASS | cut -d' ' -f3 | tr -d '",'
-}
-
-get_class() {
-  xprop -id "$1" WM_CLASS | cut -d' ' -f4 | tr -d '",'
-}
+# Dependencies: wmutils, wew, xwinfo
 
 on_xcb_create_notify() {
   # shellcheck disable=SC2046
   wmv -a $(wmp) "$1"
-  class=$(get_class "$1")
-  case $class in
+  case $(xwinfo -c "$1") in
     URxvt) compton-trans 90 -w "$1" ;;
   esac
 }
