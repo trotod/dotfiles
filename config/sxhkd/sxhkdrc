@@ -42,13 +42,13 @@ super + shift + Return
 # Dmenu based applications
 
 super + space
-  dmenu_run
+  dmenu_run -q -p run
 
 super + c
   dmenu_calc
 
 super + p
-  passmenu --type
+  passmenu --type -q -p pass
 
 # Volume control
 
