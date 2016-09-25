@@ -31,9 +31,9 @@ esac
 
 wtf "$wid"
 
-read -r x y w h << EOF
-$(wattr xywh "$wid")
-EOF
-
-wmp -a "$x" "$y"
-wmp -r $((w-1)) $((h-1))
+#read -r x y w h << EOF
+#$(wattr xywh "$wid")
+#EOF
+#
+#wmp -a "$x" "$y"
+#wmp -r $((w-1)) $((h-1))
