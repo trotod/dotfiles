@@ -4,5 +4,4 @@
 
 xdotool search --onlyvisible --class "chromium" \
   | xargs printf "0x%08x\n" \
-  | tac \
   | xargs -n1 chwso -l
