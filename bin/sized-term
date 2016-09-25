@@ -1,14 +1,15 @@
 #!/bin/sh
 #
 # Creates a terminal window based on drawn size.
-# Requires: urxvt, slop, wmutils
+# Dependencies: slop
+
+# Define font size.
+FONT_W=${FONT_W:-6}
+FONT_H=${FONT_H:-12}
 
 slopoutput="$(slop -t 0 -f '%w %h %x %y')" || exit 1
-
 read -r w h x y << EOF
 $slopoutput
 EOF
 
-urxvtc
-sleep .01 # hack
-wtp "$x" "$y" "$w" "$h" "$(pfw)"
+urxvtc -g "$((w / FONT_W))x$((h / FONT_H))+$x+$y"
