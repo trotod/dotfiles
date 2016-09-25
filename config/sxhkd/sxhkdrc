@@ -1,5 +1,5 @@
 #
-# ~/.config/sxhkd/sxhkdrc
+# sxhkdrc
 #
 
 # WM
@@ -9,18 +9,6 @@ super + {shift + ,_} Tab
 
 super + {h,j,k,l}
   closest.sh {h,j,k,l}
-
-super + shift + x
-  killw (pfw)
-
-super + {1-9}
-  groups.sh -t {1-9}
-
-super + shift + {1-9}
-  wattr (pfw); and groups.sh -s (pfw) {1-9}
-
-~button1
-  wtf (underneath.sh)
 
 super + shift + {h,j,k,l}
   set cur (pfw); \
@@ -32,9 +20,15 @@ super + alt + shift + {h,j,k,l}
   wrs {-20 0,0 20,0 -20,20 0} $cur; \
   focus.sh $cur
 
+super + shift + x
+  wmctrl -c :ACTIVE:
+
+super + m
+  wmctrl -r :ACTIVE: -b toggle,maximized_vert,maximized_horz
+
 # Lock
 
-super + alt + shift + shift + l
+ctrl + alt + BackSpace
   lock
 
 # Terminal emulators

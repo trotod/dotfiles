@@ -4,22 +4,9 @@
 # Dependencies: wmutils, wew, xwinfo, xprop
 
 on_xcb_create_notify() {
-  # shellcheck disable=SC2046
-  wmv -a $(wmp) "$1"
-
   case $(xwinfo -c "$1") in
     URxvt) compton-trans 90 -w "$1" ;;
-    chromium) groups.sh -s "$1" 2 ;;
   esac
-
-  case $(xwinfo -i "$1") in
-    chat) groups.sh -s "$1" 1 ;;
-  esac
-
-  role="$(xprop -notype -id "$1" WM_WINDOW_ROLE | cut -d' ' -f3- | tr -d '"')"
-  if [ "$role" = "browser" ]; then
-    maximize "$1"
-  fi
 }
 
 on_xcb_map_notify() {
@@ -30,7 +17,7 @@ on_xcb_map_notify() {
 }
 
 on_xcb_unmap_notify() {
-  wattr m "$(pfw)" || focus.sh prev
+  wattr "$(pfw)" || focus.sh prev
 }
 
 main() {

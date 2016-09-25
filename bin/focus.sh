@@ -23,7 +23,6 @@ fi
 
 case $(xwinfo -c "$wid") in
   chromium)
-    restack
     ;;
   *)
     chwso -r "$wid"
