@@ -7,6 +7,7 @@ on_xcb_create_notify() {
   case $(xwinfo -c "$1") in
     URxvt) compton-trans 90 -w "$1" ;;
   esac
+  focus.sh "$1"
 }
 
 on_xcb_map_notify() {
