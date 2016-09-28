@@ -41,7 +41,7 @@ case $(xwinfo -c "$wid") in
   chromium)
     chwso -l "$wid"
     restack
-    wmp -a $((x + w)) $((y + h))
+    wmp -a $((x + w - 1)) $((y + h - 1))
     ;;
   *)
     chwso -r "$wid"
