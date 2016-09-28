@@ -11,9 +11,6 @@ on_xcb_create_notify() {
 }
 
 on_xcb_map_notify() {
-  case $(xwinfo -c "$wid") in
-    chromium) restack ;;
-  esac
   focus.sh "$1"
 }
 

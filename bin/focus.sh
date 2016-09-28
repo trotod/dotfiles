@@ -27,11 +27,9 @@ if [ -z "$(lsw)" ]; then
 EOF
   wmp -a $((w/2)) $((h/2))
   exit
-elif [ "$wid" = "$cur" ]; then
-  exit
+elif [ "$wid" != "$cur" ]; then
+  wtf "$wid"
 fi
-
-wtf "$wid"
 
 read -r x y w h << EOF
 $(wattr xywh "$wid")
