@@ -2,6 +2,9 @@
 # ncmpcpp/config
 #
 
+# Config directory.
+ncmpcpp_directory = ~/.config/ncmpcpp
+
 # Music directory.
 mpd_music_dir = "~/Music"
 

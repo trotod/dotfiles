@@ -11,7 +11,7 @@ set -x GPG_TTY (tty)
 set -x N_PREFIX $HOME/.local
 
 # $PATH
-set -x fish_user_paths $HOME/.local/bin $HOME/.bin
+set -x fish_user_paths $HOME/.local/bin
 
 # $LS_COLORS
 if test \( (tput colors) -eq 256 \) -a \( -f $HOME/.colors/LS_COLORS \)
