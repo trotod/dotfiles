@@ -12,4 +12,4 @@ read -r w h x y << EOF
 $slopoutput
 EOF
 
-urxvtc -g "$((w / FONT_W))x$((h / FONT_H))+$x+$y"
+$TERMINAL -g "$((w / FONT_W))x$((h / FONT_H))+$x+$y"

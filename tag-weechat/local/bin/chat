@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # Runs chat inside a dtach session.
-# Dependencies: urxvt, dtach, weechat
+# Dependencies: dtach, weechat
 
-urxvtc -title chat -name chat \
+$TERMINAL -title chat -name chat \
   -e dtach -A /tmp/chat -E weechat

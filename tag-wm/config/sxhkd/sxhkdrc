@@ -34,7 +34,7 @@ ctrl + alt + BackSpace
 # Terminal emulators
 
 super + Return
-  urxvtc
+  eval $TERMINAL
 
 super + shift + Return
   sized-term
@@ -74,7 +74,7 @@ XF86Audio{Prev,Play,Next}
 # Applications
 
 super + w
-  chromium
+  eval $BROWSER
 
 super + z
   zathura
