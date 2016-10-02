@@ -1,7 +1,36 @@
 #!/bin/sh
 #
-# Restack thing.
+# Hacks. Someday I'll use C...
 
-xdotool search --onlyvisible --class "chromium" \
-  | xargs printf "0x%08x\n" \
-  | xargs -n1 chwso -l
+# highest_chromium() {
+#   lsw | {
+#     prev=
+#     while read -r wid; do
+#       [ "$(xwinfo -c "$wid")" != "chromium" ] && break
+#       prev=$wid
+#     done
+#     echo "$prev"
+#   }
+# }
+#
+# case $(xwinfo -c "$1") in
+#   chromium)
+#     xdo lower "$1"
+#     highest=$(highest_chromium)
+#     if [ ! -z "$highest" ] && [ "$highest" != "$1" ]; then
+#       xdo above -t "$highest" "$1"
+#     fi
+#     ;;
+#   *) xdo raise "$1" ;;
+# esac
+
+case $(xwinfo -c "$1") in
+  chromium) chwso -l "$1" ;;
+  *) chwso -r "$1"; exit ;;
+esac
+
+lsw | while read -r wid; do
+  if [ "$(xwinfo -c "$wid")" = "chromium" ]; then
+    chwso -l "$wid"
+  fi
+done
