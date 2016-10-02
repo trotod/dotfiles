@@ -4,4 +4,21 @@
 # not given.
 
 dir=${1:-$PWD}
-tmux new -A -c "$dir" -s "$(basename "$dir" | tr '.' '-' | sed 's/^-//')"
+name=$(basename "$dir" | tr '.' '-' | sed 's/^-//')
+
+has_session() {
+  tmux list-sessions -F '#S' | grep -q "^$name$"
+}
+
+create_session() {
+  tmux new -c "$dir" -s "$name" "$@"
+}
+
+if [ -z "$TMUX" ]; then
+  create_session -A
+else
+  if ! has_session; then
+    create_session -d
+  fi
+  tmux switch-client -t "$name"
+fi
