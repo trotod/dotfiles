@@ -8,7 +8,6 @@
 	l = log --graph --decorate --oneline -n 20
 [core]
 	editor = nvim
-	excludesfile = /home/me/.gitignore
 	pager = diff-so-fancy | less --tabs=4 -RFX
 [merge]
 	tool = vimdiff
