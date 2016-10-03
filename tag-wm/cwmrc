@@ -50,8 +50,8 @@ bind CM-Delete unmap
 bind M-Return unmap
 bind M-Down unmap
 bind M-Up unmap
-bind M-/ unmap
-bind C-/ unmap
+bind M-slash unmap
+bind C-slash unmap
 bind CM-n unmap
 bind M-Tab unmap
 bind MS-Tab unmap
@@ -74,10 +74,10 @@ bind CMS-f unmap
 bind CM-s unmap
 bind CM-f unmap
 bind CM-m unmap
-bind CM-= unmap
-bind CMS-= unmap
-bind M-? unmap
-bind M-. unmap
+bind CM-equal unmap
+bind CMS-equal unmap
+bind M-question unmap
+bind M-period unmap
 bind CM-w unmap
 bind CMS-r unmap
 bind CMS-q unmap
