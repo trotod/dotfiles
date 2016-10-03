@@ -1,6 +1,7 @@
 #!/bin/sh
 
 xrdb ~/.Xresources
+xmodmap ~/.Xmodmap
 xsetroot -cursor_name left_ptr
 hsetroot -solid "#212121"
 
