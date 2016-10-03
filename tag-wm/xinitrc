@@ -1,52 +1,25 @@
 #!/bin/sh
 
-#
-# xinitrc
-#
-
 xrdb ~/.Xresources
-xset +fp ~/.fonts
-xset fp rehash
-
 xsetroot -cursor_name left_ptr
-hsetroot -solid \#f1f1f1
-unclutter -b
-urxvtd -q -f -o
-dunst &
+hsetroot -solid "#212121"
 
-xset s noblank
-xset s off
-#xss-lock -- lock &
-
-# wallpaper
-if [ -f ~/.wallpaper ]; then
-  hsetroot -center ~/.wallpaper
-fi
-
-# ibus
-export GTK_IM_MODULE=fcitx
-export XMODIFIERS=@im=fcitx
-export QT_IM_MODULE=fcitx
-fcitx
-
-# programs
-export TERMINAL=urxvtc
-export BROWSER=chromium
-
-# panel
-panel &
-
-# keybindings
-sxhkd &
-
-# shellcheck disable=1090
 if [ -d /etc/X11/xinit/xinitrc.d ]; then
   for f in /etc/X11/xinit/xinitrc.d/*; do
+    # shellcheck source=/dev/null
     [ -x "$f" ] && . "$f"
   done
   unset f
 fi
 
-#swm &
+if [ -d "$HOME"/.config/X11/xinit/xinitrc.d ]; then
+  for f in "$HOME"/.config/X11/xinit/xinitrc.d/*; do
+    echo "$f" >> /tmp/startup.log
+    # shellcheck source=/dev/null
+    [ -x "$f" ] && . "$f"
+  done
+  unset f
+fi
+
 cwm &
 exec wm-loop >/tmp/wm.log 2>&1
