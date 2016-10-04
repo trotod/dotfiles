@@ -21,7 +21,10 @@ super + alt + shift + {h,j,k,l}
   focus.sh $cur
 
 super + shift + x
-  wmctrl -c :ACTIVE:
+  killwa (pfw)
+
+super + alt + shift + x
+  killw (pfw)
 
 super + m
   wmctrl -r :ACTIVE: -b toggle,maximized_vert,maximized_horz
