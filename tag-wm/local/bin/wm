@@ -22,8 +22,8 @@ main() {
   wew | while IFS=: read -r ev wid; do
     wattr o "$wid" ||
     case $ev in
-      16) on_xcb_create_notify "$wid" ;;
-      19) on_xcb_map_notify "$wid" ;;
+      16) wattr "$wid" && on_xcb_create_notify "$wid" ;;
+      19) wattr "$wid" && on_xcb_map_notify "$wid" ;;
       18) on_xcb_unmap_notify "$wid" ;;
     esac
   done
