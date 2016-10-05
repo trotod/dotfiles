@@ -18,6 +18,7 @@ autogroup 1 "chat,URxvt"
 autogroup 2 "chromium"
 autogroup 2 "Firefox"
 autogroup 3 "Zathura"
+autogroup 9 "mpv"
 
 # Group keybindings.
 bind 4-1 group1
