@@ -1,2 +1,3 @@
 #!/bin/sh
-xset s 0 0
+xautolock -locker "lock" &
+xss-lock -- xautolock -locknow &
