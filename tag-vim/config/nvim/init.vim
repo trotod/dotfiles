@@ -41,6 +41,9 @@ set list listchars=tab:\ \ ,trail:·
 set textwidth=79
 set colorcolumn=+1
 
+" Don't show intro message.
+set shortmess+=I
+
 augroup vimrcEx
   autocmd!
 
