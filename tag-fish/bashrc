@@ -1,1 +1,2 @@
-env SHELL=/usr/bin/fish fish ; exit
+[[ $- != *i* ]] && return
+exec env SHELL=/usr/bin/fish fish
