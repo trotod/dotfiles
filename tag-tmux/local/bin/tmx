@@ -6,10 +6,6 @@
 dir=${1:-$PWD}
 name=$(basename "$dir" | tr '.' '-' | sed 's/^-//')
 
-has_session() {
-  tmux list-sessions -F '#S' | grep -q "^$name$"
-}
-
 create_session() {
   tmux new -c "$dir" -s "$name" "$@"
 }
@@ -17,8 +13,6 @@ create_session() {
 if [ -z "$TMUX" ]; then
   create_session -A
 else
-  if ! has_session; then
-    create_session -d
-  fi
+  ! tmux has-session -t "$name" 2>/dev/null && create_session -d
   tmux switch-client -t "$name"
 fi
