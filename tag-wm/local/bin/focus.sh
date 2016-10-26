@@ -38,6 +38,6 @@ EOF
 restack "$wid"
 
 case $(xwinfo -c "$wid") in
-  chromium) wmp -a $((x + w - 1)) $((y + h - 1)) ;;
+  Chromium) wmp -a $((x + w - 1)) $((y + h - 1)) ;;
   *) wmp -a $((x + w / 2)) $((y + h / 2)) ;;
 esac

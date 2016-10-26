@@ -25,12 +25,12 @@
 # esac
 
 case $(xwinfo -c "$1") in
-  chromium) chwso -l "$1" ;;
+  Chromium) chwso -l "$1" ;;
   *) chwso -r "$1"; exit ;;
 esac
 
 lsw | while read -r wid; do
-  if [ "$(xwinfo -c "$wid")" = "chromium" ]; then
+  if [ "$(xwinfo -c "$wid")" = "Chromium" ]; then
     chwso -l "$wid"
   fi
 done

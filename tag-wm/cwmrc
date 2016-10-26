@@ -15,7 +15,7 @@ mousebind 4-3 window_resize
 
 # Autogrouping.
 autogroup 1 "chat,URxvt"
-autogroup 2 "chromium"
+autogroup 2 "Chromium"
 autogroup 2 "Firefox"
 autogroup 3 "Zathura"
 autogroup 9 "mpv"
