@@ -20,6 +20,7 @@ trim_trailing_whitespace = false
 
 [{M,m}akefile]
 indent_style = tab
+indent_size = 8
 
 [.gitconfig*]
 indent_style = tab
