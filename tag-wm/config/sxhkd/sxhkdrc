@@ -81,3 +81,6 @@ super + w
 
 super + z
   zathura
+
+super + F12
+  pkill -f 'x11grab'
