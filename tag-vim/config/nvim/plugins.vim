@@ -1,4 +1,4 @@
-call plug#begin('~/.config/vim-plugins')
+call plug#begin('~/.local/share/vim-plugins')
 Plug 'LaTeX-Box-Team/LaTeX-Box'
 Plug 'easymotion/vim-easymotion'
 Plug 'airblade/vim-gitgutter'
