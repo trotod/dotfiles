@@ -27,7 +27,6 @@ alias be='bundle exec'
 alias so='source'
 
 # shortcuts
-alias e='eval $EDITOR'
 alias vim='nvim'
 
 # ping
