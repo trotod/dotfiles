@@ -54,7 +54,7 @@ parse < "$PANEL_FIFO" \
 # Subscribe to new information.
 #
 
-xtitle -sf 'T%s' > "$PANEL_FIFO" &
+xtitle -sf 'T%s\n' > "$PANEL_FIFO" &
 clock -sf 'C%a %H:%M' > "$PANEL_FIFO" &
 
 wait
