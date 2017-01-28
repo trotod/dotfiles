@@ -1,0 +1,1 @@
+exec env SHELL=/usr/bin/fish fish --login
