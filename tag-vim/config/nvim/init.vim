@@ -37,9 +37,8 @@ set diffopt+=vertical
 " Whitespace.
 set list listchars=tab:\ \ ,trail:·
 
-" Wrap at 79 chars.
-set textwidth=79
-set colorcolumn=+1
+" Try to limit line length to 80 chars.
+set colorcolumn=80
 
 " Don't show intro message.
 set shortmess+=I
