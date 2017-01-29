@@ -74,6 +74,9 @@ alt + Print
 XF86Audio{Prev,Play,Next}
   mpc -q {prev,toggle,next}
 
+alt + XF86Audio{Prev,Play,Next}
+  mpvc {prev,toggle,next} -q
+
 # Applications
 
 super + w
