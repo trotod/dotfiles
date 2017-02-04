@@ -1,6 +1,6 @@
 # ~/.config/zathura/zathurarc
 
-set font                        "tewi"
+set font                        "tewi 9"
 set default-bg                  "#212121"
 set default-fg                  "#424242"
 
