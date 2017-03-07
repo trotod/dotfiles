@@ -55,7 +55,6 @@ augroup vimrcEx
     \ endif
 
   autocmd Filetype css,scss,sass,less,stylus setlocal iskeyword+=-
-  autocmd Filetype make setlocal ts=8
 augroup END
 
 " Buffer/Tab management.
