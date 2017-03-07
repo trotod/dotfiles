@@ -3,7 +3,12 @@
 # Creates or attaches session based on given name, or the directory name if
 # not given.
 
-dir=${1:-$PWD}
+dir=
+if [ -z "$1" ]; then
+  dir=$PWD
+else
+  dir=$(readlink -f "$1")
+fi
 name=$(basename "$dir" | tr '.' '-' | sed 's/^-//')
 
 create_session() {
