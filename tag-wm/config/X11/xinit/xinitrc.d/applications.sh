@@ -1,3 +1,3 @@
 #!/bin/sh
-export TERMINAL=urxvtc
+export TERMINAL=st
 export BROWSER=chromium

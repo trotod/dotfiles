@@ -1,7 +1,2 @@
 #!/bin/sh
-#
-# Runs chat inside a dtach session.
-# Dependencies: dtach, weechat
-
-$TERMINAL -title chat -name chat \
-  -e dtach -A /tmp/chat -E weechat
+st -t chat -n chat -e abduco -A chat weechat
