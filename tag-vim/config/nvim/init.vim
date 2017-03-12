@@ -38,7 +38,9 @@ set diffopt+=vertical
 set list listchars=tab:\ \ ,trail:·
 
 " Try to limit line length to 80 chars.
-set colorcolumn=80
+set textwidth=79
+set colorcolumn=+1
+set formatoptions-=t
 
 " Don't show intro message.
 set shortmess+=I
