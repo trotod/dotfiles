@@ -57,6 +57,7 @@ augroup vimrcEx
     \ endif
 
   autocmd Filetype css,scss,sass,less,stylus setlocal iskeyword+=-
+  autocmd Filetype mail setlocal textwidth=72 fo+=aw
 augroup END
 
 " Buffer/Tab management.
