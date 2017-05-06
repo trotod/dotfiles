@@ -1,3 +1,3 @@
 #!/bin/sh
 export TERMINAL=st
-export BROWSER=chromium
+export BROWSER=firefox
