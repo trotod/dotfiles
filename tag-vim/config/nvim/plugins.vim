@@ -1,6 +1,5 @@
 call plug#begin('~/.local/share/vim-plugins')
 Plug 'airblade/vim-gitgutter'
-Plug 'bling/vim-airline'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
@@ -15,7 +14,6 @@ Plug 'MarcWeber/vim-addon-local-vimrc'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/flappyvird-vim'
 Plug 'othree/yajs.vim'
-Plug 'reedes/vim-colors-pencil'
 Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
 Plug 'ternjs/tern_for_vim'
@@ -24,6 +22,8 @@ Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 call plug#end()
@@ -34,6 +34,7 @@ let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline_theme = 'base16_shell'
 
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
@@ -90,7 +91,6 @@ highlight link GitGutterAdd DiffAdd
 highlight link GitGutterChange DiffChange
 highlight link GitGutterDelete DiffDelete
 highlight link GitGutterChangeDelete GitGutterChange
-let g:pencil_gutter_color = 1
 
 " emmet
 let g:user_emmet_settings = {

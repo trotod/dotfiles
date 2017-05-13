@@ -8,7 +8,8 @@ endif
 
 " Colors.
 set background=dark
-colors pencil
+set termguicolors
+colors base16
 
 " Line numbers.
 set number
