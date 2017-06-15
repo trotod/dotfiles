@@ -32,7 +32,7 @@ super + m
 # Lock
 
 ctrl + alt + BackSpace
-  xautolock -locknow
+  lock
 
 # Terminal emulators
 
