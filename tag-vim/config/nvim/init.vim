@@ -28,7 +28,7 @@ set autowrite
 
 " Tabs.
 set tabstop=2
-set smartindent
+set shiftwidth=2
 
 " Splits.
 set splitbelow
