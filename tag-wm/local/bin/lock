@@ -1,5 +1,7 @@
 #!/bin/sh
 
+pkill -x -USR1 dunst
+
 screenshot="$(mktemp --tmpdir screenshot-XXXXXXXX.png)"
 lockpaper="$(mktemp --tmpdir lockpaper-XXXXXXXX.png)"
 
@@ -10,3 +12,5 @@ rm "$screenshot"
 i3lock -i "$lockpaper" -n
 
 rm "$lockpaper"
+
+pkill -x -USR2 dunst
