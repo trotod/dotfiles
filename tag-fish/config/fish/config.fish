@@ -1,5 +1,5 @@
 if status --is-login
-	set -e fish_greeting
+	set fish_greeting
 	set -x fish_user_paths $HOME/.local/bin
 	set -x EDITOR nvim
 	set -x VISUAL $EDITOR
