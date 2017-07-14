@@ -1,8 +1,10 @@
 " ~/.vimrc
 
-let mapleader = ' '
+scriptencoding utf-8
 
-if filereadable(expand("~/.config/nvim/plugins.vim"))
+let g:mapleader = ' '
+
+if filereadable(expand('~/.config/nvim/plugins.vim'))
   source ~/.config/nvim/plugins.vim
 endif
 

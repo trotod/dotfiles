@@ -1,3 +1,5 @@
+scriptencoding utf-8
+
 call plug#begin('~/.local/share/vim-plugins')
 Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-tmux-navigator'
