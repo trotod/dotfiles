@@ -14,7 +14,6 @@ Plug 'MarcWeber/vim-addon-local-vimrc'
 Plug 'mattn/emmet-vim'
 Plug 'mattn/flappyvird-vim'
 Plug 'othree/yajs.vim'
-Plug 'scrooloose/syntastic'
 Plug 'sheerun/vim-polyglot'
 Plug 'ternjs/tern_for_vim'
 Plug 'tpope/vim-fugitive'
@@ -26,7 +25,11 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'w0rp/ale'
 call plug#end()
+
+" ale
+let g:airline#extensions#ale#enabled = 1
 
 " airline
 set noshowmode
@@ -57,14 +60,6 @@ map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 map <Leader>h <Plug>(easymotion-linebackward)
 let g:EasyMotion_startofline = 0
-
-" syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_wq = 0
-
-" standardjs
-let g:syntastic_javascript_checkers = ['standard']
 
 " elm
 let g:elm_syntastic_show_warnings = 1
